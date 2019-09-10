@@ -15,11 +15,11 @@ The last counter you will ever need!
 
 **Softwares Used and Installation of Project**
 - - -
-1. [React] (https://reactjs.org/)
-2. [Notepad++] (https://notepad-plus-plus.org/)
-3. [Webstorm by JetBrains] (https://www.jetbrains.com/webstorm/)
-4. [Ant] (https://ant.design/docs/react/introduce)
-5. [Material] (https://material-ui.com/)
+1. [React]https://reactjs.org/)
+2. [Notepad++](https://notepad-plus-plus.org/)
+3. [Webstorm by JetBrains](https://www.jetbrains.com/webstorm/)
+4. [Ant](https://ant.design/docs/react/introduce)
+5. [Material](https://material-ui.com/)
 
 **Team Roles**
 - - -
