@@ -26,5 +26,5 @@ The last counter you will ever need!
 1. **Jimmy Nguyen**- Client Lieason, Testing lead  :fireworks: :fire:
 2. **Sam Groom**- Documentatation Lead :metal:
 3. **Phillip Chazares**- Lead Programmer :godmode: :feelsgood:
-4. **Matheus**- UI/UX Design
+4. **Matheus**- UI/UX Design :sunglasses: :soccer:
 5. **Weston Armstrong**- Team Manager, Data Modeler :muscle: :muscle:
