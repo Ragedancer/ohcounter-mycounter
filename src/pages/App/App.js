@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import './App.css';
+import './App.scss';
 import ActionPrompt from "../ActionPrompt/ActionPrompt";
 
 class App extends Component {

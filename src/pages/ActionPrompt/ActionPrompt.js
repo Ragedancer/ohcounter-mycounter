@@ -16,9 +16,7 @@ class ActionPrompt extends Component {
                 {/*Button element is Material-UI component it is imported from the */}
                 <Button variant="contained" color="primary">
                     Select
-                </Button><br/><br/>
-
-                <button>Select</button>
+                </Button>
 
             </div>
         );
