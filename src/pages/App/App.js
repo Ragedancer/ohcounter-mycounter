@@ -7,7 +7,7 @@ class App extends Component {
         return (
             <div>
                 <header>
-                   
+
                 </header>
                 <ActionPrompt/>
             </div>
