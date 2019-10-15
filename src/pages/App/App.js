@@ -17,21 +17,21 @@ function toggleCover(element) {
 function toggleHamMenu() {
     toggleShow('menu');
     toggleCover('menu-active');
-    toggleMenuOptions();
+   // toggleMenuOptions();
 }
-
-function toggleMenuOptions() {
-    if (checkCookie(recentGameCookie)) {
-        document.getElementById('menuReturnGame').classList.toggle('hide', false);
-        document.getElementById('menuRandPlayer').classList.toggle('hide', false);
-        document.getElementById('menuResetGame').classList.toggle('hide', false);
-    }
-    else {
-        document.getElementById('menuReturnGame').classList.toggle('hide', true);
-        document.getElementById('menuRandPlayer').classList.toggle('hide', true);
-        document.getElementById('menuResetGame').classList.toggle('hide', true);
-    }
-}
+//
+// function toggleMenuOptions() {
+//     if (checkCookie(recentGameCookie)) {
+//         document.getElementById('menuReturnGame').classList.toggle('hide', false);
+//         document.getElementById('menuRandPlayer').classList.toggle('hide', false);
+//         document.getElementById('menuResetGame').classList.toggle('hide', false);
+//     }
+//     else {
+//         document.getElementById('menuReturnGame').classList.toggle('hide', true);
+//         document.getElementById('menuRandPlayer').classList.toggle('hide', true);
+//         document.getElementById('menuResetGame').classList.toggle('hide', true);
+//     }
+// }
 
 class App extends Component {
     render() {
@@ -41,6 +41,16 @@ class App extends Component {
 
                 </header>
                 <ActionPrompt/>
+                <div id="menu" className="slide-in from-left">
+                    <h1 className="logo">Oh Counter, My Counter</h1>
+                    <a id="menuReturnGame" href="#" onClick="menuReturnToGame()" className="hide">Return to Game</a>
+                    <a href="#" onClick="newGame()">New Game</a>
+                    <a href="#" onClick="menuOpenDice()">Dice</a>
+                    <a id="menuRandPlayer" href="#" onClick="menuRandPlayer()" className="hide">Random Player
+                        Selector</a>
+                    <a id="menuResetGame" href="#" onClick="menuResetGame()" className="hide">Reset Game</a>
+                </div>
+
             </div>
         );
     }
