@@ -14,10 +14,18 @@ class ActionPrompt extends Component {
 
             <div>
                 <div id = "main">
+<<<<<<< HEAD
                     <label for = "newGame">New Game<input type = "radio" id = "newGame" name = "newGame" value = "newGame"/></label>
+=======
+
+>>>>>>> 5c65f8c58c4795a47833b426e275e62a19f93e91
                 </div>
                 <div id = "selectGame">
-                        <Button onclick = {buttonActionPrompt()}> Select</Button>
+                    <Button onclick = {buttonActionPrompt()}> Return to Game</Button>
+                    <Button onclick = {buttonActionPrompt()}> New Game</Button>
+                    <Button onclick = {buttonActionPrompt()}> Dice</Button>
+                    <Button onclick = {buttonActionPrompt()}> Random Player Selector</Button>
+                    <Button onclick = {buttonActionPrompt()}> Reset</Button>
                 </div>
             </div>
         );

@@ -1,0 +1,28 @@
+body {
+  @include clearfix;
+  font-family: $font-secondary;
+  font-size: 1.2rem;
+  font-weight: normal;
+  line-height: 110%;
+  z-index: $z-base;
+  background-color: $bg;
+  cursor: default;
+  overflow-y: scroll;
+} // body
+
+ #{headings()} {
+  font-family: $font-primary;
+  font-weight: bold;
+} // headings
+
+h1 {
+  display: block;
+  line-height: 50px;
+  font-size: 1.4rem;
+} // h1
+
+h2 {
+  color: $secondaryContent;
+  font-size: .9rem;
+  margin-bottom: .6rem;
+} // h2
