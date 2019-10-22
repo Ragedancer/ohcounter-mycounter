@@ -1,7 +1,10 @@
 import React, {Component} from 'react';
 import './App.scss';
 import ActionPrompt from "../ActionPrompt/ActionPrompt";
+import { BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
+
 import {checkCookie} from "../../utils/cookie";
+import Game from "../Game/Game";
 // Toggle show on element
 function toggleShow(element) {
     document.getElementById(element).classList.toggle('show');
@@ -41,16 +44,55 @@ class App extends Component {
 
                 </header>
                 <ActionPrompt/>
-                <div id="menu" className="slide-in from-left">
-                    <h1 className="logo">Oh Counter, My Counter</h1>
-                    <a id="menuReturnGame" href="#" onClick="menuReturnToGame()" className="hide">Return to Game</a>
-                    <a href="#" onClick="newGame()">New Game</a>
-                    <a href="#" onClick="menuOpenDice()">Dice</a>
-                    <a id="menuRandPlayer" href="#" onClick="menuRandPlayer()" className="hide">Random Player
-                        Selector</a>
-                    <a id="menuResetGame" href="#" onClick="menuResetGame()" className="hide">Reset Game</a>
-                </div>
+                {/*<div id="menu" className="slide-in from-left">*/}
+                {/*    <h1 className="logo">Oh Counter, My Counter</h1>*/}
+                {/*    <a id="menuReturnGame" href="#" onClick="menuReturnToGame()" className="hide">Return to Game</a>*/}
+                {/*    <a href="#" onClick="newGame()">New Game</a>*/}
+                {/*    <a href="#" onClick="menuOpenDice()">Dice</a>*/}
+                {/*    <a id="menuRandPlayer" href="#" onClick="menuRandPlayer()" className="hide">Random Player*/}
+                {/*        Selector</a>*/}
+                {/*    <a id="menuResetGame" href="#" onClick="menuResetGame()" className="hide">Reset Game</a>*/}
+                {/*</div>*/}
+                {/*<Link to='/Game'>Game</Link>*/}
 
+                <Router>
+                    <nav>
+                        <ul>
+                            <li>
+                                <Link to="/actionprompt">Action Prompt</Link>
+                            </li>
+                            <li>
+                                <Link to="/numplayerselect">Select Player</Link>
+                            </li>
+                            <li>
+                                <Link to="/gameselect">Game Select</Link>
+                            </li>
+                            <li>
+                                <Link to="/game">Game</Link>
+                            </li>
+                            <li>
+                                <Link to="/playername">Player Name</Link>
+                            </li>
+                            <li>
+                                <Link to="/randomplayer">Random Player Selector</Link>
+                            </li>
+                            <li>
+                                <Link to="/dice">Dice</Link>
+                            </li>
+                        </ul>
+                    </nav>
+                    <Switch>
+                        <Route path="/actionprompt">
+                            <ActionPrompt />
+                        </Route>
+                        {/*<Route path="/users">*/}
+                        {/*    <Dice />*/}
+                        {/*</Route>*/}
+                        <Route path="/game">
+                            <Game />
+                        </Route>
+                    </Switch>
+                </Router>
             </div>
         );
     }
