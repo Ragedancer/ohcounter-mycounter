@@ -1,0 +1,70 @@
+header {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: $toolbar-height;
+  background-color: $primary;
+  z-index: $z-toolbar;
+
+  .menu-button {
+    margin: 0 5px;
+    fill: $primaryContent;
+  } // .menu-button
+} // header
+
+#menu {
+  @include box-shadow;
+  display: block;
+  position: absolute;
+  top: 0;
+  z-index: $z-hamburger-menu;
+  width: $menu-width;
+  height: 100vh;
+  background-color: $tertiary;
+
+  @include susy-breakpoint($small) {
+    width: $menu-small-width;
+  }; // small
+
+  @include susy-breakpoint($medium) {
+    width: $menu-medium-width;
+  }; // medium
+
+  @include susy-breakpoint($large) {
+    width: $menu-large-width;
+  }; // large
+
+  a {
+    display: block;
+    width: 100%;
+    font-size: $menu-font;
+    line-height: $menu-line-height;
+    vertical-align: middle;
+    text-decoration: none;
+    color: $secondaryContent;
+    background-color: $secondary;
+    padding-left: 10px;
+    border-bottom: solid 2px $tertiary;
+
+    @include susy-breakpoint($medium) {
+      font-size: $menu-font;
+      line-height: $menu-medium-line-height;
+    }; // medium
+  } // a
+} // menu
+
+#menu-active {
+  @extend %activeToggle;
+  background-color: $blur;
+  z-index: $z-hamburger-blur;
+} // menu-active
+
+.logo {
+  display: block;
+  padding: 10px 15px;
+  background-color: $primary;
+  color: $primaryContent;
+  margin: 0;
+} // logo

@@ -1,0 +1,196 @@
+@mixin font($familyName, $fontName, $dir, $weight, $style) {
+  @font-face {
+    font-family: $familyName;
+    src: url('fonts/' + $dir + '/' + $fontName + '.woff') format('woff'),
+    url('fonts/' + $dir + '/' + $fontName + '.woff2') format('woff2'),
+    url('fonts/' + $dir + '/' + $fontName + '.ttf') format('truetype');
+    font-weight: $weight;
+    font-size: $style;
+  }
+}
+
+@include font('Exo 2', 'Exo2-Thin', 'Exo_2', 100, 'thin');
+@include font('Exo 2', 'Exo2-Bold', 'Exo_2', 700, 'bold');
+@include font('Marvel', 'Marvel-Regular', 'Marvel', 400, 'regular');
+
+$font-primary: 'Exo 2', Sans-Serif;
+$font-secondary: Marvel, Sans-Serif;
+
+$layout: gutter(4);
+
+// Z-Index ====================================
+/*
+ 0 -  9: Normal
+10 - 19: Tooltips
+20 - 29: Fab Menu
+30 - 39: Hamburger Menu
+40 - 49:
+50 - 59:
+60 - 69:
+70 - 71:
+80 - 89:
+90 - 99: Animations
+*/
+
+// Normal
+$z-base: 1;
+$z-toolbar: 5;
+$z-content-cover: 9;
+
+// Tooltips
+$z-tooltip: 10;
+
+// Fab Menu
+$z-fab-menu: 20;
+
+// Hamburger Menu
+$z-hamburger-blur: 31;
+$z-hamburger-menu: 35;
+
+// Alert
+$z-alert-blur: 41;
+$z-alert: 45;
+
+// Animations
+$z-animations: 90;
+
+// Colors =====================================
+
+$bg: #fff;
+$primary:   #070303;
+$secondary: #f7121f;
+$tertiary:  #fff;
+
+$primaryContent:   #fff;
+$secondaryContent: #fff;
+$tertiaryContent:  #000;
+
+$primaryHover:   #030707;
+$secondaryHover: #12f7ea;
+// $secondaryHover: #f9434e;
+$tertiaryHover:  #e5e5e5;
+
+$primaryHoverContent:   #fff;
+$secondaryHoverContent: #000;
+$tertiaryHoverContent:  #000;
+
+$primaryActive:   $primaryHover;
+$secondaryActive: $secondaryHover;
+$tertiaryActive:  $tertiaryHover;
+
+$primaryActiveContent: #fff;
+$secondaryActiveContent: #000;
+$tertiaryActiveContent: #000;
+
+$blur: rgba(#000,.75);
+$alert-blur: rgba(#000, .3);
+$overlay: #fff;
+$tooltip-color: rgba(#2f2f2f, 0.8);
+$tooltip-text: #fff;
+$radio-group-color: $secondaryContent;
+
+// Sizes =======================================
+
+// Content
+$content-medium-padding: 0 10%;
+$content-large-padding: 0 25%;
+
+// Toolbar
+$toolbar-height: 50px;
+
+// Menu
+$menu-width: 90%;
+$menu-small-width: 80%;
+$menu-medium-width: 60%;
+$menu-large-width: 30%;
+$menu-font: 1.7rem;
+$menu-medium-font: 1.5rem;
+$menu-line-height: 180%;
+$menu-medium-line-height: 150%;
+
+// Fab
+$fab: 40px;
+$fab-mini: $fab * .60;
+$fab-margin: 15px;
+$fab-padding: 5px;
+$fab-mini-margin: auto;
+$fab-mini-padding: 3px;
+
+// Tooltip
+$tooltip-width: 60px;
+$tooltip-border-radius: 6px;
+$tooltip-padding: $fab-mini-padding 0;
+$tooltip-v-offset: 2px;
+$tooltip-h-offset: 150%;
+
+// Group
+$group-background-color: $secondary;
+$group-width: 100%;
+$group-margin: 10px auto;
+$group-padding: 0 5%;
+$group-small-padding: 0 20%;
+$group-medium-padding: 0 30%;
+$group-large-padding: 0 35%;
+$group-height: 100vh;
+
+// Radio Groups
+$radio-border-width: 3px;
+$radio-border-radius: 10px;
+$radio-padding: 5px 20px;
+$radio-player-margin: 10px auto;
+$radio-game-margin: 10px auto;
+
+// Game Init
+$player-input-border: solid thin $secondaryContent;
+$player-input-background-color: $secondary;
+$player-input-color: $secondaryContent;
+$player-input-padding: 5px 10px;
+
+// Buttons
+$button-round-width: 100px;
+$button-round-height: 35px;
+$button-round-radius: 10px;
+
+// Dice
+$dice-height-width: 75px;
+$dice-margin: 10px;
+$dice-t-width: 285px;
+
+// Counters
+$increment-full: 40%;
+$increment-half: 30%;
+$increment-s-height: 50px;
+$increment-s-name-height: 22px;
+$increment-font-size: 1.8rem;
+$increment-line-height: 200%;
+$counter-value-font-size: 2rem;
+
+// Player Tabs
+$player-tab-height: 30px;
+$player-tab-margin: -4px;
+
+// Spacing
+$spacing-offset: 40%;
+
+// Alert
+$alert-error-bg: #08EDE0;
+$alert-error-color: #000;
+$alert-width: 95%;
+$alert-button-width: 50%;
+$alert-title-padding: 10px 15px;
+$alert-message-padding: 10px 15px;
+$alert-button-padding: 5px;
+$alert-button-margin: 5px calc(((100% - #{$alert-width}) + #{$alert-width} - #{$alert-button-width}) / 2) 10px;
+
+// Animations ==========================
+$fade-timing: .25s;
+$small-circle-overlay: 40px;
+
+/* $default-transition-property: all;
+$default-transition-duration: 1s;
+$default-transition-timing-function: ease-in-out;
+ */
+$default-box-shadow-color: #333333;
+$default-box-shadow-h-offset: 1px;
+$default-box-shadow-v-offset: 2px;
+$default-box-shadow-blur: 5px;
