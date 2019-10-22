@@ -4,7 +4,10 @@ import './ActionPrompt.scss';
 import {checkCookie} from "../../utils/cookie";
 import {loadFile, loadFileContents, newTemplate} from "../../utils/template";
 import {clearScreen} from "../../utils/util";
+function buttonActionPrompt()
+    {
 
+    }
 class ActionPrompt extends Component {
     render() {
         return (
@@ -13,10 +16,10 @@ class ActionPrompt extends Component {
                 <div id = "main">
                     <Button value = "continue">Continue Game</Button>
 
-                    <Button value = "new">New Game</Button>
+                    <input value = "new">New Game</input>
                 </div>
                 <div id = "selectGame">
-                        <Button onclick = "buttonActionPrompt()"> Select</Button>
+                        <Button onclick = {buttonActionPrompt()}> Select</Button>
                 </div>
             </div>
         );
