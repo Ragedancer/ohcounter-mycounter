@@ -9,7 +9,6 @@ class ActionPrompt extends Component {
     render() {
         return (
 
-
             <div>
                 <div id = "main">
                     <Button value = "continue">Continue Game</Button>
