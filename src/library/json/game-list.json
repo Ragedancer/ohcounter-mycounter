@@ -1,0 +1,24 @@
+{
+  "games": [
+    {
+      "id":0,
+      "name":"MTG Commander",
+      "template": "games/MTG-Commander.json"
+    },
+    {
+      "id":1,
+      "name":"MTG Standard",
+      "template": "games/MTG-Standard.json"
+    },
+    {
+      "id":2,
+      "name":"Yu-Gi-Oh",
+      "template": "games/YuGiOh.json"
+    },
+    {
+      "id":3,
+      "name":"Munchkin",
+      "template": "games/Munchkin.json"
+    }
+  ]
+}
