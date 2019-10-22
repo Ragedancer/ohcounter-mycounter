@@ -8,8 +8,8 @@
     "start": 40,
     "value": 40,
     "increments": [
-       5,
-       1
+      5,
+      1
     ],
     "announce": false,
     "otherPlayers": false
@@ -21,3 +21,4 @@
 
   ]
 }
+

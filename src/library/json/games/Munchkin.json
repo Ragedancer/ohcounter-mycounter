@@ -9,7 +9,11 @@
     "start": 1,
     "value": 1,
     "increments": [
+<<<<<<< HEAD
        1
+=======
+      1
+>>>>>>> d313ed8cb78ae5f1328fea0831912026c21f29ee
     ],
     "announce": false,
     "otherPlayers": false
@@ -35,4 +39,8 @@
   "tertiary": [
 
   ]
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> d313ed8cb78ae5f1328fea0831912026c21f29ee

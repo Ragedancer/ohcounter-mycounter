@@ -9,10 +9,17 @@
     "start": 8000,
     "value": 8000,
     "increments": [
+<<<<<<< HEAD
        1000,
        500,
        100,
        50
+=======
+      1000,
+      500,
+      100,
+      50
+>>>>>>> d313ed8cb78ae5f1328fea0831912026c21f29ee
     ],
     "announce": false,
     "otherPlayers":false
@@ -23,4 +30,8 @@
   "tertiary": [
 
   ]
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> d313ed8cb78ae5f1328fea0831912026c21f29ee
