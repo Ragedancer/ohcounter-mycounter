@@ -14,9 +14,7 @@ class ActionPrompt extends Component {
 
             <div>
                 <div id = "main">
-                    <Button value = "continue">Continue Game</Button>
-
-                    <input value = "new">New Game</input>
+                    
                 </div>
                 <div id = "selectGame">
                         <Button onclick = {buttonActionPrompt()}> Select</Button>
