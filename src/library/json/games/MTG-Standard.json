@@ -9,8 +9,13 @@
     "start": 20,
     "value": 20,
     "increments": [
+<<<<<<< HEAD
+       5,
+       1
+=======
       5,
       1
+>>>>>>> d313ed8cb78ae5f1328fea0831912026c21f29ee
     ],
     "announce": false,
     "otherPlayers":false
@@ -31,4 +36,8 @@
   "tertiary": [
 
   ]
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> d313ed8cb78ae5f1328fea0831912026c21f29ee

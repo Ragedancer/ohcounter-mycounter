@@ -10,8 +10,13 @@
     "value": 40,
     "increments": [
       10,
+<<<<<<< HEAD
+       5,
+       1
+=======
       5,
       1
+>>>>>>> d313ed8cb78ae5f1328fea0831912026c21f29ee
     ],
     "announce": false,
     "otherPlayers":false
@@ -53,4 +58,8 @@
       "otherPlayers":true
     }
   ]
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> d313ed8cb78ae5f1328fea0831912026c21f29ee
