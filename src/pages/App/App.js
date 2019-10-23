@@ -35,7 +35,7 @@ function toggleHamMenu() {
 //         document.getElementById('menuResetGame').classList.toggle('hide', true);
 //     }
 // }
-
+//let gameFile = 'sadsada';
 class App extends Component {
     render() {
         return (
@@ -43,7 +43,14 @@ class App extends Component {
                 <header>
 
                 </header>
-                <ActionPrompt/>
+
+                /*Passing in a fake game file, which would be a mobX file*/
+                /* let gameFile = -mobX file with current game*/
+
+                 {/*<ActionPrompt  gameFile= {gameFile} />*/}
+
+
+                <ActionPrompt />
                 {/*<div id="menu" className="slide-in from-left">*/}
                 {/*    <h1 className="logo">Oh Counter, My Counter</h1>*/}
                 {/*    <a id="menuReturnGame" href="#" onClick="menuReturnToGame()" className="hide">Return to Game</a>*/}
