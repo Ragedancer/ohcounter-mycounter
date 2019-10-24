@@ -44,8 +44,8 @@ class App extends Component {
 
                 </header>
 
-                /*Passing in a fake game file, which would be a mobX file*/
-                /* let gameFile = -mobX file with current game*/
+                {/*Passing in a fake game file, which would be a mobX file*/}
+                 {/*let gameFile = -mobX file with current game*/}
 
                  {/*<ActionPrompt  gameFile= {gameFile} />*/}
 
