@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
 import "./App.scss";
 import ActionPrompt from "../ActionPrompt/ActionPrompt";
-import { BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 import Dice from "../Dice/Dice";
-
+import {Switch, Route, Link} from "react-router-dom";
 import {checkCookie} from "../../utils/cookie";
 import Game from "../Game/Game";
+
 // Toggle show on element
 function toggleShow(element) {
     document.getElementById(element).classList.toggle('show');
@@ -63,7 +63,6 @@ class App extends Component {
                 {/*</div>*/}
                 {/*<Link to='/Game'>Game</Link>*/}
 
-                <Router>
                     <nav>
                         <ul>
                             <li>
@@ -100,7 +99,6 @@ class App extends Component {
                             <Game />
                         </Route>
                     </Switch>
-                </Router>
             </div>
         );
     }
