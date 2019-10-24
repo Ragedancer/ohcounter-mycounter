@@ -92,7 +92,7 @@ class App extends Component {
                         <Route path="/actionprompt">
                             <ActionPrompt />
                         </Route>
-                        {/*<Route path="/users">*/}
+                        {/*<Route path="/dice">*/}
                         {/*    <Dice />*/}
                         {/*</Route>*/}
                         <Route path="/game">

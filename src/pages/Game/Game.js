@@ -3,6 +3,7 @@ import {getCookie, setCookie} from "../../utils/cookie";
 import {loadFile, loadFileContents, appendChildNodes, convertToElement} from "../../utils/template";
 import {clearScreen} from "../../utils/util";
 import {newState} from "../../utils/history";
+import {Radio} from "@material-ui/core";
 //import './Game.scss'
 
 //Variables
@@ -20,7 +21,7 @@ function createGameCookie(data) {
     return new Promise(function(resolve, reject) {
         let gameTemp = 'games/MTG-Commander.json';
 
-        loadFileContents('lib/json/game-list.json').then(function(gameRes) {
+        loadFileContents('library/json/game-list.json').then(function(gameRes) {
             let json = JSON.parse(gameRes).games;
 
             for (let i = 0; i < json.length; i++) {
@@ -29,7 +30,7 @@ function createGameCookie(data) {
                 }
             }
         }).then(function() {
-            loadFileContents('lib/json/' + gameTemp).then(function(res) {
+            loadFileContents('library/json/' + gameTemp).then(function(res) {
                 let game = res;
                 let numPlayers = data.numPlayers;
                 let cookieData = [];
@@ -85,7 +86,7 @@ export function openGame(data) {
 // Setup a game based on recentGameCookie
 function setUpGame(data) {
 
-    loadFile('templates', 'template/game.html').then(function(res) {
+    loadFile('templates', 'pages/Game/Game.js').then(function(res) {
         let numPlayers = data.length;
         // Create the player tabs
         let playerTabs = document.createElement('div');
@@ -364,7 +365,7 @@ class Game extends Component{
         return(
             <body>
                 <div className="item">
-                    <input type="radio" id="player0" name="player-tab" onChange={activatePlayer()}/>
+                    <Radio id="player0" name="player-tab" onChange={activatePlayer()}/>
                     <label htmlFor="player0">Player 0</label>
                 </div>
 
