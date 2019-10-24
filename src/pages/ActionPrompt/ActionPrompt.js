@@ -24,11 +24,11 @@ class ActionPrompt extends Component {
      //gameFile;
 
 
-    // constructor(props)
-    // {
-    //     super(props);
-    //
-    // }
+    constructor(props)
+    {
+        super(props);
+
+    }
 
     render() {
       //  let conInput,newInput;
