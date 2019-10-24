@@ -57,7 +57,7 @@ class ActionPrompt extends Component {
                 <div id = "selectGame">
                     <Button onclick = {buttonActionPrompt()} to='/game'> Return to Game</Button>
                     <Button onclick = {buttonActionPrompt()}> New Game</Button>
-                    <Button onclick = {buttonActionPrompt()}> Dice</Button>
+                    <Button onclick = {buttonActionPrompt()} to='/dice'>Dice</Button>
                     <Button onclick = {buttonActionPrompt()}> Random Player Selector</Button>
                     <Button onclick = {buttonActionPrompt()}> Reset</Button>
                 </div>

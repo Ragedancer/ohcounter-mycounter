@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
-import './App.scss';
+import "./App.scss";
 import ActionPrompt from "../ActionPrompt/ActionPrompt";
 import { BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
+import Dice from "../Dice/Dice";
 
 import {checkCookie} from "../../utils/cookie";
 import Game from "../Game/Game";
@@ -92,9 +93,9 @@ class App extends Component {
                         <Route path="/actionprompt">
                             <ActionPrompt />
                         </Route>
-                        {/*<Route path="/dice">*/}
-                        {/*    <Dice />*/}
-                        {/*</Route>*/}
+                        <Route path="/dice">
+                           <Dice />
+                        </Route>
                         <Route path="/game">
                             <Game />
                         </Route>
