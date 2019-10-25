@@ -5,6 +5,7 @@ import Dice from "../Dice/Dice";
 import {Switch, Route, Link} from "react-router-dom";
 import {checkCookie} from "../../utils/cookie";
 import Game from "../Game/Game";
+import RandomPlayerSelector from "../RandomPlayerSelector/RandomPlayerSelector";
 
 // Toggle show on element
 function toggleShow(element) {
@@ -97,6 +98,9 @@ class App extends Component {
                         </Route>
                         <Route path="/game">
                             <Game />
+                        </Route>
+                        <Route path={"/randomplayer"}>
+                            <RandomPlayerSelector />
                         </Route>
                     </Switch>
             </div>
