@@ -1,7 +1,7 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 
 
-let players = ["player 1", "player 2", "player 3", "player 4"];
+
  // export function RandPlayer(players) {
  //     this.players[Math.floor(Math.random()*players.length)];
 // //
@@ -13,69 +13,78 @@ let players = ["player 1", "player 2", "player 3", "player 4"];
 // //     //     alert('Error', 'At least one player must be selected.', 'error', 3000);
 // //     // }
   //  }
+//creating array to test random player selection
 
-
-
-class RandomPlayerSelector extends Component{
-    constructor() {
-        super();
-        this.state = {
-            players: []
-        }
+class RandomPlayerSelector extends Component {
+    // no idea if i need this
+    state = {
+        players: [
+            {"name": "player 1"},
+            {"name": "player 2"},
+            {"name": "player 3"},
+            {"name": "player 4"},
+            {"name": "fuck you"}
+        ]
     }
-
-
-    onChange(e){
+    //taken from internet
+    onChange(e) {
+        //gets current state of players from json
         const players = this.state.players
+        //determines position in array
         let index
-
-        if(e.target.checked) {
+        if (e.target.checked) {
             players.push(+e.target.value)
         } else {
             index = players.indexOf(+e.target.value)
             players.splice(index, 1)
         }
-
         this.setState({players: players})
     }
+    //returns random player from array
+    randPlayer = () => {
+        return (
 
+              this.setState({player: this.state.players[Math.floor(Math.random() * this.state.players.length)].name})
+
+        )
+    }
+    //generates checkbox for player
+    player = (players) => {
+        return(
+            <div>
+                <label>{players.name}</label>
+                <input type="checkbox" id={players.name} value={players.name} onChange={this.onChange.bind(this)}/>
+            </div>
+        )
+    }
     render() {
-        // //create array
-        //
-        // //select random value from array
 
-        // //displays players as checklist
         // let selection = function (X) {
         //     return <option>{X}</option>
         return(
-            <main>
-                <form>
-                    <div>
-                        <label for="rand-player1">{players[0]}</label>
-                        <input type="checkbox" id="rand-player1" value={0} onChange={this.onChange.bind(this)}/>
-                    </div>
-                    <div>
-                        <label for = "rand-player2">{players[1]}</label>
-                        <input type = "checkbox" id = "rand-player2" value={1} onChange={this.onChange.bind(this)} />
-                    </div>
-                    <div>
-                        <label for="rand-player2">{players[2]}</label>
-                        <input type="checkbox" id="rand-player2" value={2} onChange={this.onChange.bind(this)}/>
-                    </div>
-                </form>
+            <div>
+                {this.state.players[0].name}
+                {this.state.players.map(
+                        (player, i) =>
+                            <this.player
+                                key={i}
+                                name={player.name}/>
+                    )}
+                    {/*should generate random player and display it*/}
 
-                <button onClick={() => this.RandPlayers(players)}>
+                <button onClick={this.randPlayer.bind(this)}>
                     Generate
                 </button>
+                <div>
+                    {this.state.player}
+                </div>
 
-                </main>
-)
+            </div>
+
+        )
     }
-
-    RandPlayers(players) {
-        return players[Math.floor(Math.random()*players.length)];
-    }
-
 }
+
+
 
 export default RandomPlayerSelector;
