@@ -5,7 +5,9 @@ import App from '../App/App.js';
 import {checkCookie} from "../../utils/cookie";
 import {loadFile, loadFileContents, newTemplate} from "../../utils/template";
 import {clearScreen} from "../../utils/util";
-    function buttonActionPrompt()
+import {observable} from "mobx";
+
+function buttonActionPrompt()
     {
 
     }
@@ -19,7 +21,6 @@ import {clearScreen} from "../../utils/util";
             <label for = "continue">Continue Game</label><input type= "radio" id = "continue" name = "continue">
             );
     }*/
-
 class ActionPrompt extends Component {
      //gameFile;
 

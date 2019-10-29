@@ -4,7 +4,9 @@ import ActionPrompt from "../ActionPrompt/ActionPrompt";
 import Dice from "../Dice/Dice";
 import {Switch, Route, Link} from "react-router-dom";
 import {checkCookie} from "../../utils/cookie";
+import {withCookies} from "react-cookie";
 import Game from "../Game/Game";
+
 
 // Toggle show on element
 function toggleShow(element) {
@@ -37,7 +39,11 @@ function toggleHamMenu() {
 //     }
 // }
 //let gameFile = 'sadsada';
+
+
 class App extends Component {
+
+
     render() {
         return (
             <div>
@@ -104,4 +110,4 @@ class App extends Component {
     }
 }
 
-export default App;
+export default withCookies(App);
