@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Button from '@material-ui/core/Button';
 import './ActionPrompt.scss';
+import './NewGameButton.js';
 import App from '../App/App.js';
 import {checkCookie} from "../../utils/cookie";
 import {loadFile, loadFileContents, newTemplate} from "../../utils/template";
@@ -22,38 +23,14 @@ function buttonActionPrompt()
             );
     }*/
 class ActionPrompt extends Component {
-     //gameFile;
-
-
-    constructor(props)
-    {
-        super(props);
-
-    }
 
     render() {
-      //  let conInput,newInput;
-        // function isEmpty(obj) {
-        //     for(const key in obj) {
-        //         if(obj.hasOwnProperty(key))
-        //             return false;
-        //     }
-        //     return true;
-        // }
-        // if(isEmpty(this.gameFile))
-        // {
-        //     conInput = <newGame/>;
-        // }
+
         return (
 
             <div>
                 <div id = "main">
                     <h3>What would you like to do?</h3>
-                    <label htmlFor="new"><input type="radio" id="new" name="new"/>New Game</label>
-                    {/*<App gameFile = {this.props.gameFile}/>*/}
-                    {/*{conInput}*/}
-                    {/*{newInput}*/}
-
                 </div>
                 <div id = "selectGame">
                     <Button onclick = {buttonActionPrompt()} to='/game'> Return to Game</Button>
