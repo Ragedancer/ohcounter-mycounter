@@ -42,8 +42,8 @@ function toggleHamMenu() {
 //let gameFile = 'sadsada';
 
 
-class App extends Component {
 
+class App extends Component {
 
     render() {
         return (

@@ -1,48 +1,86 @@
 import React, {Component} from 'react';
 import Button from '@material-ui/core/Button';
 import './ActionPrompt.scss';
-import './NewGameButton.js';
 import App from '../App/App.js';
 import {checkCookie} from "../../utils/cookie";
 import {loadFile, loadFileContents, newTemplate} from "../../utils/template";
 import {clearScreen} from "../../utils/util";
 import {observable} from "mobx";
 
-function buttonActionPrompt()
-    {
-
-    }
-// function newGame(){
-//     return (
-//         <label for = "new"><input type= "radio" id = "new" name = "new"/>New Game</label>
-//     );
-// }
-   /* function continueGame(props){
-        return (
-            <label for = "continue">Continue Game</label><input type= "radio" id = "continue" name = "continue">
-            );
-    }*/
-class ActionPrompt extends Component {
-
-    render() {
-
-        return (
-
-            <div>
-                <div id = "main">
-                    <h3>What would you like to do?</h3>
-                </div>
-                <div id = "selectGame">
-                    <Button onclick = {buttonActionPrompt()} to='/game'> Return to Game</Button>
-                    <Button onclick = {buttonActionPrompt()}> New Game</Button>
-                    <Button onclick = {buttonActionPrompt()} to='/dice'>Dice</Button>
-                    <Button onclick = {buttonActionPrompt()}> Random Player Selector</Button>
-                    <Button onclick = {buttonActionPrompt()}> Reset</Button>
-                </div>
-            </div>
-        );
-    }
+class ActionPrompt extends Component{
+constructor(props) {
+    super(props);
+    this.handleGame = this.handleGame.bind(this);
+    this.handlePlayers = this.handlePlayers.bind(this);
+    this.handleEntireGame = this.handleEntireGame.bind(this);
+    this.state = {game: false};
+    this.state = {entireGame:false}
+    this.state = {player: ''}
 }
 
-//ActionPrompt is exported and can be referenced as an element when it is imported
+handleGame() {
+    this.setState({game: true});
+}
+
+handlePlayers(e) {
+    this.setState({player:e.target.value});
+}
+handleEntireGame(){}
+
+render() {
+    const game = this.state.game;
+    const entireGame = this.state.entireGame;
+    const players = this.state.player;
+    let button;
+
+    if (entireGame) {
+        button = <ContinueGame onClick={this.handleEntireGame} />;
+    }
+    if (game) {
+        button = <ChoosePlayers onSelect={this.handlePlayers} />;
+    } else {
+        button = <NewGame onClick={this.handleGame} />;
+    }
+    if(players > "1")
+    {
+        alert('asd');
+    }
+    return (
+        <div>
+            {button}
+        </div>
+    );
+}
+}
+
+function NewGame(props) {
+    return (
+        <button onClick={props.onClick}>
+            New Game?
+        </button>
+    );
+}
+
+function ContinueGame(props) {
+    return (
+        <button onClick={props.onClick}>
+            Continue Game?
+        </button>
+    );
+}
+function ChoosePlayers(props) {
+    return (
+        <select  onSelect={props.onSelect}>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+        </select>
+    );
+}
+function ChooseNames(props) {
+    return (
+        <button>Woooh</button>
+    );
+}
 export default ActionPrompt;
