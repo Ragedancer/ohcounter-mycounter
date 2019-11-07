@@ -21,6 +21,7 @@ class Dice extends Component {
     test(){}
 
 
+
     render() {
         return (
             <div>
@@ -30,8 +31,7 @@ class Dice extends Component {
 
                 <div id = "Dice">
                     <img src = {Dice4}
-                    onClick={null}
-                    />
+                    onClick={clickedDice}/>
 
                     <img src = {Dice6}  />
                     <img src = {Dice8}  />
@@ -45,6 +45,10 @@ class Dice extends Component {
             </div>
         );
     }
+}
+
+function clickedDice(props) {
+    return (alert('hi'));
 }
 
 //Need to export for other files to see -jimmy
