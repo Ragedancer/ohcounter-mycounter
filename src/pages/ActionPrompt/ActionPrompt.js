@@ -15,7 +15,7 @@ constructor(props) {
     this.handleEntireGame = this.handleEntireGame.bind(this);
     this.state = {game: false};
     this.state = {entireGame:false}
-    this.state = {player: ''}
+    this.state = {player:null}
 }
 
 handleGame() {
@@ -23,7 +23,7 @@ handleGame() {
 }
 
 handlePlayers(e) {
-    this.setState({player:e.target.value});
+    this.setState({player:e.value});
 }
 handleEntireGame(){}
 
@@ -37,13 +37,13 @@ render() {
         button = <ContinueGame onClick={this.handleEntireGame} />;
     }
     if (game) {
-        button = <ChoosePlayers onSelect={this.handlePlayers} />;
+        button = <ChoosePlayers  onSelect={this.handlePlayers} />;
     } else {
         button = <NewGame onClick={this.handleGame} />;
     }
-    if(players > "1")
+    if(players === 2)
     {
-        alert('asd');
+        button = <ChooseNames/>;
     }
     return (
         <div>
@@ -70,7 +70,7 @@ function ContinueGame(props) {
 }
 function ChoosePlayers(props) {
     return (
-        <select  onSelect={props.onSelect}>
+        <select value = {props.value} onSelect = {props.onSelect} >
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -78,7 +78,7 @@ function ChoosePlayers(props) {
         </select>
     );
 }
-function ChooseNames(props) {
+function ChooseNames() {
     return (
         <button>Woooh</button>
     );
