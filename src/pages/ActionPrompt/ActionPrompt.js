@@ -13,17 +13,20 @@ constructor(props) {
     this.handleGame = this.handleGame.bind(this);
     this.handlePlayers = this.handlePlayers.bind(this);
     this.handleEntireGame = this.handleEntireGame.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
     this.state = {game: false};
     this.state = {entireGame:false}
-    this.state = {player:null}
+    this.state = {player: 0 }
 }
 
 handleGame() {
     this.setState({game: true});
 }
-
+handleSubmit(e){
+    e.preventDefault();
+}
 handlePlayers(e) {
-    this.setState({player:e.value});
+    this.setState({player:e.target.value});
 }
 handleEntireGame(){}
 
@@ -31,17 +34,18 @@ render() {
     const game = this.state.game;
     const entireGame = this.state.entireGame;
     const players = this.state.player;
+    let p = this.state.player;
     let button;
 
     if (entireGame) {
         button = <ContinueGame onClick={this.handleEntireGame} />;
     }
     if (game) {
-        button = <ChoosePlayers  onSelect={this.handlePlayers} />;
+        button = <ChoosePlayers value = {p} onChange={this.handlePlayers} />;
     } else {
         button = <NewGame onClick={this.handleGame} />;
     }
-    if(players === 2)
+    if(players > "0")
     {
         button = <ChooseNames/>;
     }
@@ -70,7 +74,7 @@ function ContinueGame(props) {
 }
 function ChoosePlayers(props) {
     return (
-        <select value = {props.value} onSelect = {props.onSelect} >
+        <select value = {props.value} onChange = {props.onChange} >
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
