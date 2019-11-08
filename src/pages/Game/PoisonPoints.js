@@ -13,9 +13,9 @@ class PoisonPoints extends React.Component {
         return (
             <div className={"poison-points"}>
                 <h5 className={"title"}>Poison</h5>
-                <Increment />
+                <Increment hitPoints={1}/>
                 <h1 className={"life-points"}>{this.state.poisonPoints}</h1>
-                <Decrement />
+                <Decrement hitPoints={1}/>
             </div>
         );
     }

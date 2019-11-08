@@ -12,9 +12,9 @@ class CommanderCost extends React.Component {
         return (
             <div className={"commander-cost"}>
                 <h5 className={"title"}>Commander Cost</h5>
-                <Increment />
+                <Increment hitPoints={2}/>
                 <h1 className={"life-points"}>{this.state.commanderCost}</h1>
-                <Decrement />
+                <Decrement hitPoints={2}/>
             </div>
         );
     }

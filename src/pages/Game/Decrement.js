@@ -15,6 +15,7 @@ class Decrement extends React.Component {
                     <SvgIcon xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
                         <path d="M38 -4V26H10v-4h12V10h4v12h12v4z"/>
                     </SvgIcon>
+                    <span>{this.props.hitPoints}</span>
                 </IconButton>
             </div>
         );
