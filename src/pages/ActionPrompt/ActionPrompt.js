@@ -7,65 +7,84 @@ import {loadFile, loadFileContents, newTemplate} from "../../utils/template";
 import {clearScreen} from "../../utils/util";
 import {observable} from "mobx";
 
-function buttonActionPrompt()
-    {
-
-    }
-// function newGame(){
-//     return (
-//         <label for = "new"><input type= "radio" id = "new" name = "new"/>New Game</label>
-//     );
-// }
-   /* function continueGame(props){
-        return (
-            <label for = "continue">Continue Game</label><input type= "radio" id = "continue" name = "continue">
-            );
-    }*/
-class ActionPrompt extends Component {
-     //gameFile;
-
-
-    constructor(props)
-    {
-        super(props);
-
-    }
-
-    render() {
-      //  let conInput,newInput;
-        // function isEmpty(obj) {
-        //     for(const key in obj) {
-        //         if(obj.hasOwnProperty(key))
-        //             return false;
-        //     }
-        //     return true;
-        // }
-        // if(isEmpty(this.gameFile))
-        // {
-        //     conInput = <newGame/>;
-        // }
-        return (
-
-            <div>
-                <div id = "main">
-                    <h3>What would you like to do?</h3>
-                    <label htmlFor="new"><input type="radio" id="new" name="new"/>New Game</label>
-                    {/*<App gameFile = {this.props.gameFile}/>*/}
-                    {/*{conInput}*/}
-                    {/*{newInput}*/}
-
-                </div>
-                <div id = "selectGame">
-                    <Button onclick = {buttonActionPrompt()} to='/game'> Return to Game</Button>
-                    <Button onclick = {buttonActionPrompt()}> New Game</Button>
-                    <Button onclick = {buttonActionPrompt()} to='/dice'>Dice</Button>
-                    <Button onclick = {buttonActionPrompt()}> Random Player Selector</Button>
-                    <Button onclick = {buttonActionPrompt()}> Reset</Button>
-                </div>
-            </div>
-        );
-    }
+class ActionPrompt extends Component{
+constructor(props) {
+    super(props);
+    this.handleGame = this.handleGame.bind(this);
+    this.handlePlayers = this.handlePlayers.bind(this);
+    this.handleEntireGame = this.handleEntireGame.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.state = {game: false};
+    this.state = {entireGame:false}
+    this.state = {player: 0 }
 }
 
-//ActionPrompt is exported and can be referenced as an element when it is imported
+handleGame() {
+    this.setState({game: true});
+}
+handleSubmit(e){
+    e.preventDefault();
+}
+handlePlayers(e) {
+    this.setState({player:e.target.value});
+}
+handleEntireGame(){}
+
+render() {
+    const game = this.state.game;
+    const entireGame = this.state.entireGame;
+    const players = this.state.player;
+    let p = this.state.player;
+    let button;
+
+    if (entireGame) {
+        button = <ContinueGame onClick={this.handleEntireGame} />;
+    }
+    if (game) {
+        button = <ChoosePlayers value = {p} onChange={this.handlePlayers} />;
+    } else {
+        button = <NewGame onClick={this.handleGame} />;
+    }
+    if(players > "0")
+    {
+        button = <ChooseNames/>;
+    }
+    return (
+        <div>
+            {button}
+        </div>
+    );
+}
+}
+
+function NewGame(props) {
+    return (
+        <button onClick={props.onClick}>
+            New Game?
+        </button>
+    );
+}
+
+function ContinueGame(props) {
+    return (
+        <button onClick={props.onClick}>
+            Continue Game?
+        </button>
+    );
+}
+function ChoosePlayers(props) {
+    return (
+        <select value = {props.value} onChange = {props.onChange} >
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+        </select>
+    );
+}
+function ChooseNames() {
+    return (
+        <button>Woooh</button>
+    );
+}
 export default ActionPrompt;
