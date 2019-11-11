@@ -14,19 +14,29 @@ constructor(props) {
     this.handlePlayers = this.handlePlayers.bind(this);
     this.handleEntireGame = this.handleEntireGame.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleNames = this.handleNames.bind(this);
     this.state = {game: false};
-    this.state = {entireGame:false}
-    this.state = {player: 0 }
+    this.state = {entireGame:false};
+    this.state = {player: 0 };
+    this.state = {names:''};
 }
 
 handleGame() {
     this.setState({game: true});
 }
 handleSubmit(e){
+    alert(this.state.names);
+
     e.preventDefault();
+
 }
 handlePlayers(e) {
     this.setState({player:e.target.value});
+}
+handleNames(e){
+    let joined = this.state.names.concat(e.target.value);
+
+    this.setState({names:joined});
 }
 handleEntireGame(){}
 
@@ -35,8 +45,9 @@ render() {
     const entireGame = this.state.entireGame;
     const players = this.state.player;
     let p = this.state.player;
+    let name = this.state.names;
     let button;
-
+    let sub;
     if (entireGame) {
         button = <ContinueGame onClick={this.handleEntireGame} />;
     }
@@ -47,12 +58,17 @@ render() {
     }
     if(players > "0")
     {
-        button = <ChooseNames/>;
+        let i;
+        for(i = 0;i<players;i++) {
+            button = <ChooseNames type="text" value={name} onChange={this.handleNames} onSubmit={this.handleSubmit}/>;
+        }
+
+
     }
     return (
-        <div>
+        <form onSubmit={this.handleSubmit}>
             {button}
-        </div>
+        </form>
     );
 }
 }
@@ -82,9 +98,12 @@ function ChoosePlayers(props) {
         </select>
     );
 }
-function ChooseNames() {
+function ChooseNames(props) {
     return (
-        <button>Woooh</button>
+        <form onSubmit={props.onSubmit}>
+            <label>Player<input type = {props.type}value = {props.value} onChange = {props.onChange}/></label>
+            <input type ="submit" value = "Submit"/>
+        </form>
     );
 }
 export default ActionPrompt;
