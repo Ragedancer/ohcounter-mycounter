@@ -4,7 +4,7 @@ import SvgIcon from "@material-ui/core/SvgIcon/SvgIcon";
 
 class Decrement extends React.Component {
     decrement = (newLifePoints,  newHitPoints) =>{
-        newLifePoints += newHitPoints;
+        newLifePoints -= newHitPoints;
         this.props.sendLifePoints(newLifePoints);
     }
     render(){
