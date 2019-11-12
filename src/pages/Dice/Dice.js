@@ -20,33 +20,29 @@ class Dice extends Component {
         return (
             <div>
                 <div id = "main">
-                    <h1>Hi Guys Dice here</h1>
+                    <h1>Hey Guys, Dice here</h1>
                     <h1> Konichiwa!!!</h1>
 
-                <div id = "DiceBox">
-                    <img src = {Dice4}
-                         id={"dice"}
-                    onClick={clickedDice}/>
+                <tr id = "DiceRow1">
+                    <td> <img src = {Dice4} value = {4} id={"dice"}
+                              onClick={clickedDice}/></td>
+                    <td><img src = {Dice6} value = {6} id={"dice"}
+                             onClick={clickedDice}/></td>
+                    <td><img src = {Dice8} value = {8} id={"dice"}
+                             onClick={clickedDice}/></td>
+                    <td><img src = {Dice10} value = {10} id={"dice"}
+                             onClick={clickedDice}/></td>
+                </tr>
 
-                    <img src = {Dice6}
-                         id={"dice"}/>
+                    <tr id = "DiceRow2">
+                    <td><img src = {Dice12} value = {12} id={"dice"}
+                             onClick={clickedDice}/></td>
+                    <td><img src = {Dice20} value = {20} id={"dice"}
+                             onClick={clickedDice}/></td>
+                    <td><img src = {Coin} value = {2} id={"dice"}
+                             onClick={clickedDice}/></td>
 
-                    <img src = {Dice8}
-                         id={"dice"}/>
-
-                    <img src = {Dice10}
-                         id={"dice"}/>
-
-                    <img src = {Dice12}
-                         id={"dice"}/>
-
-                    <img src = {Dice20}
-                         id={"dice"}/>
-
-                    <img src = {Coin}
-                         id={"dice"}/>
-
-                    </div>
+                    </tr>
                 </div>
             </div>
         );
@@ -54,7 +50,9 @@ class Dice extends Component {
 }
 
 function clickedDice(props) {
-    return (alert('testing'));
+    const x = document.getElementById("dice").value;
+
+    return (alert('testing ' + x));
 }
 
 //Need to export for other files to see -jimmy
