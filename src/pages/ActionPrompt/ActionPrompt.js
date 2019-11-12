@@ -18,25 +18,31 @@ constructor(props) {
     this.state = {game: false};
     this.state = {entireGame:false};
     this.state = {player: 0 };
-    this.state = {names:''};
+    this.state = {tempName:''};
+    this.state = {names: []};
 }
 
 handleGame() {
     this.setState({game: true});
 }
 handleSubmit(e){
-    alert(this.state.names);
+
+
 
     e.preventDefault();
+    let temp = this.state.tempName;
+    let joined = this.state.names.concat(temp);
+    this.setState({names:joined});
+    this.setState({tempName:''});
 
+  //  alert("Names is now" + this.state.names);
 }
 handlePlayers(e) {
     this.setState({player:e.target.value});
 }
 handleNames(e){
-    let joined = this.state.names.concat(e.target.value);
-
-    this.setState({names:joined});
+    this.setState({tempName:e.target.value});
+  //  alert("Names " + this.state.names);
 }
 handleEntireGame(){}
 
@@ -45,9 +51,9 @@ render() {
     const entireGame = this.state.entireGame;
     const players = this.state.player;
     let p = this.state.player;
-    let name = this.state.names;
+    let name = this.state.tempName;
+    let nameList = this.state.names;
     let button;
-    let sub;
     if (entireGame) {
         button = <ContinueGame onClick={this.handleEntireGame} />;
     }
@@ -62,7 +68,11 @@ render() {
         for(i = 0;i<players;i++) {
             button = <ChooseNames type="text" value={name} onChange={this.handleNames} onSubmit={this.handleSubmit}/>;
         }
+    if(nameList.length == players)
+    {
+        button = <ChooseGame />;
 
+    }
 
     }
     return (
@@ -104,6 +114,11 @@ function ChooseNames(props) {
             <label>Player<input type = {props.type}value = {props.value} onChange = {props.onChange}/></label>
             <input type ="submit" value = "Submit"/>
         </form>
+    );
+}
+function ChooseGame(props){
+    return(
+      <button>What Game boi</button>
     );
 }
 export default ActionPrompt;
