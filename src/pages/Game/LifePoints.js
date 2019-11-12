@@ -27,8 +27,8 @@ class LifePoints extends React.Component {
             <div className={"life-points"}>
                 <h5 className={"title"}>Life</h5>
                 <h1 className={"life-points-title"}>{this.state.lifePoints}</h1>
-                {/*pass the state props by injecting attributes in the element tag*/}
-                // to send data to child components inject with the variables sendLifePoints, lifePoints, hitPoints. you can send functions, variable, etc.
+                {/* pass the state props by injecting attributes in the element tag*/}
+                {/* to send data to child components inject with the variables sendLifePoints, lifePoints, hitPoints. you can send functions, variable, etc.*/}
                 <Increment id="incrementTen" sendLifePoints={this.getLifePoints.bind(this)} lifePoints={this.state.lifePoints} hitPoints={10}/>
                 <Decrement id="decrementTen" sendLifePoints={this.getLifePoints.bind(this)} lifePoints={this.state.lifePoints} hitPoints={10}/>
                 <Increment id="incrementTen" sendLifePoints={this.getLifePoints.bind(this)} lifePoints={this.state.lifePoints} hitPoints={5}/>
