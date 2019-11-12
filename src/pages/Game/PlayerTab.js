@@ -37,7 +37,6 @@ class PlayerTab extends React.Component {
                         <FormControlLabel value="player4" control={<Radio />} label={this.state.players[4]}/>
                     </RadioGroup>
                 </FormControl>
-
             </div>
         );
     }

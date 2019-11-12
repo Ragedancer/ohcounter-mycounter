@@ -25,9 +25,9 @@ class CommanderCost extends React.Component {
         return (
             <div className={"commander-cost"}>
                 <h5 className={"title"}>Commander Cost</h5>
-                <Increment sendCounter={this.getCounter} counter={this.state.counter} hitPoints={1}/>
+                <Increment sendCounter={this.getCounter} counter={this.state.counter} hitPoints={2}/>
                 <h1 className={"commander-cost-points"}>{this.state.counter}</h1>
-                <Decrement sendCounter={this.getCounter} counter={this.state.counter} hitPoints={1}/>
+                <Decrement sendCounter={this.getCounter} counter={this.state.counter} hitPoints={2}/>
             </div>
         );
     }
