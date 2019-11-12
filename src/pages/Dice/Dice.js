@@ -24,22 +24,22 @@ class Dice extends Component {
                     <h1> Konichiwa!!!</h1>
 
                 <tr id = "DiceRow1">
-                    <td> <img src = {Dice4} value = {4} id={"dice"}
+                    <td> <img src = {Dice4} data-value = {"4"} id={"dice"}
                               onClick={clickedDice}/></td>
-                    <td><img src = {Dice6} value = {6} id={"dice"}
+                    <td><img src = {Dice6} data-value = {6} id={"dice"}
                              onClick={clickedDice}/></td>
-                    <td><img src = {Dice8} value = {8} id={"dice"}
+                    <td><img src = {Dice8} data-value = {8} id={"dice"}
                              onClick={clickedDice}/></td>
-                    <td><img src = {Dice10} value = {10} id={"dice"}
+                    <td><img src = {Dice10} data-value = {10} id={"dice"}
                              onClick={clickedDice}/></td>
                 </tr>
 
                     <tr id = "DiceRow2">
-                    <td><img src = {Dice12} value = {12} id={"dice"}
+                    <td><img src = {Dice12} data-value = {12}  id={"dice"}
                              onClick={clickedDice}/></td>
-                    <td><img src = {Dice20} value = {20} id={"dice"}
+                    <td><img src = {Dice20} data-value = {20} id={"dice"}
                              onClick={clickedDice}/></td>
-                    <td><img src = {Coin} value = {2} id={"dice"}
+                    <td><img src = {Coin} data-value = {2} id={"dice"}
                              onClick={clickedDice}/></td>
 
                     </tr>
@@ -50,9 +50,8 @@ class Dice extends Component {
 }
 
 function clickedDice(props) {
-    const x = document.getElementById("dice").value;
-
-    return (alert('testing ' + x));
+    let x = props.target.getAttribute('data-value');
+    alert('testing ' + x);
 }
 
 //Need to export for other files to see -jimmy
