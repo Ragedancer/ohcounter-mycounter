@@ -23,6 +23,7 @@ class Dice extends Component {
                     <h1>Hey Guys, Dice here</h1>
                     <h1> Konichiwa!!!</h1>
 
+                    {/*First row of dices*/}
                 <tr id = "DiceRow1">
                     <td> <img src = {Dice4} data-value = {"4"} id={"dice"}
                               onClick={clickedDice}/></td>
@@ -34,6 +35,7 @@ class Dice extends Component {
                              onClick={clickedDice}/></td>
                 </tr>
 
+                    {/*second row of dices*/}
                     <tr id = "DiceRow2">
                     <td><img src = {Dice12} data-value = {12}  id={"dice"}
                              onClick={clickedDice}/></td>
@@ -50,8 +52,21 @@ class Dice extends Component {
 }
 
 function clickedDice(props) {
-    let x = props.target.getAttribute('data-value');
-    alert('testing ' + x);
+    let result;
+    //gets the value that was assigned to each die
+    let value = props.target.getAttribute('data-value');
+    // trying to catch the coin
+    if(value==2){
+        let coin = Math.floor(Math.random() * value) + 1;
+        if(coin == 1) {
+            result = 'head';
+        } else
+           result = 'tail';
+        alert('You flipped a coin and got a ' + result )
+    } else { //if it isn't a coin then it rolls a corresponding dice instead
+        let diceRoll = Math.floor(Math.random() * value) + 1;
+        alert('You picked a ' + value + ' and rolled a ' + diceRoll);
+    }
 }
 
 //Need to export for other files to see -jimmy
