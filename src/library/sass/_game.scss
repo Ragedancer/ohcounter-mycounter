@@ -1,0 +1,133 @@
+.loss {
+  @extend %increment;
+
+  &::before {
+    @extend %increment-ba;
+    content: '\2796\0020';
+  } // loss::before
+} // loss
+
+.gain {
+  @extend %increment;
+
+  &::after {
+    @extend %increment-ba;
+    content: '\0020\2795';
+  } // gain::after
+} // gain
+
+.value-group {
+  display: block;
+  text-align: center;
+} // value-group
+
+.counter-value {
+  font-size: $counter-value-font-size;
+  line-height: 120%;
+  vertical-align: middle;
+} // .counter-value
+
+.counter-name {
+  font-size: .8rem;
+  text-align: center;
+  height: $increment-s-name-height;
+  overflow: hidden;
+} // counter-name
+
+.multi-counter {
+  border-top: solid thin $secondary;
+  width: 95%;
+  margin: auto;
+} // multi-counter
+
+.single-counter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: $increment-s-height;
+
+  .counter-value {
+    line-height: 100%;
+    padding-bottom: .35rem;
+  } // counter-value
+
+  .loss, .gain {
+    vertical-align: middle;
+    line-height: $increment-s-height;
+  } // loss, gain
+} // single-counter
+
+.increment-group {
+  display: block;
+  text-align: center;
+  overflow: hidden;
+  line-height: $increment-line-height;
+
+  .loss {
+    float: left;
+  } // loss
+
+  .gain {
+    float: right;
+  } // gain
+
+  & + .increment-group {
+    border-top: solid thin $secondary;
+  } // increment-group + increment-group
+} // increment-group
+
+.primary {
+  @extend %counter;
+  width: 100%;
+
+  .value-group {
+    @extend %increment-value-group;
+    display: block;
+    text-align: center;
+  } // value-group
+
+  .counter-value {
+    font-size: 2.5rem;
+    vertical-align: middle;
+  } // counter-value
+
+  .single-counter {
+    height: calc(#{$increment-s-height} + 15px);
+  } // single-counter
+} // primary
+
+.secondary {
+  @extend %counter;
+  width: 100%;
+
+  .value-group {
+    @extend %increment-value-group;
+  } // value-group
+} // secondary
+
+.tertiary {
+  @extend %counter;
+  @include span(6 of 12);
+  border-bottom: solid medium $secondary;
+
+  &:nth-of-type(2n - 1) {
+    border-right: solid medium $secondary;
+  }
+
+  .value-group {
+    width: 40%;
+  } // value-group
+
+  .loss, .gain {
+    width: $increment-half;
+  } // loss, gain
+} // tertiary
+
+.player {
+  display: none;
+
+  &.active {
+    display: block;
+  } // player.active
+} // player
