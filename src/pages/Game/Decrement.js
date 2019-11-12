@@ -2,18 +2,17 @@ import React from "react";
 import IconButton from "@material-ui/core/IconButton";
 import SvgIcon from "@material-ui/core/SvgIcon/SvgIcon";
 
-function decrement(lifePoints, hitPoints){
-    return lifePoints - hitPoints;
-}
-
 class Decrement extends React.Component {
-
+    decrement = (counter,  newHitPoints) =>{
+        counter -= newHitPoints;
+        this.props.sendCounter(counter);
+    }
     render(){
         return (
-            <div className={"life-points"}>
-                <IconButton>
+            <div className={"decrement-icon"}>
+                <IconButton onClick={() => this.decrement(this.props.counter, this.props.hitPoints)}>
                     <SvgIcon xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
-                        <path d="M38 -4V26H10v-4h12V10h4v12h12v4z"/>
+                        <rect height="4.010702" width="28.041473" y="21.994649" x="9.963878"/>
                     </SvgIcon>
                     <span>{this.props.hitPoints}</span>
                 </IconButton>

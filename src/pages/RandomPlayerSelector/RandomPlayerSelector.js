@@ -19,37 +19,46 @@ class RandomPlayerSelector extends Component {
     // no idea if i need this
     state = {
         players: [
-            {"name": "player 1"},
-            {"name": "player 2"},
-            {"name": "player 3"},
-            {"name": "player 4"},
-            {"name": "fuck you"}
-        ]
+            {name: "player 1"},
+            {name: "player 2"},
+            {name: "player 3"},
+            {name: "player 4"},
+            {name: "fuck you"}
+        ],
+        selectedPlayers: [],
+        player: ""
     }
     //taken from internet
     onChange(e) {
         //gets current state of players from json
-        const players = this.state.players
+        const selectedPlayers = this.state.selectedPlayers;
         //determines position in array
         let index
         if (e.target.checked) {
-            players.push(+e.target.value)
+            selectedPlayers.push(e.target.value);
         } else {
-            index = players.indexOf(+e.target.value)
-            players.splice(index, 1)
+            index = selectedPlayers.indexOf(+e.target.value);
+            selectedPlayers.splice(index, 1)
         }
-        this.setState({players: players})
+        this.setState({selectedPlayers: selectedPlayers})
     }
-    //returns random player from array
+ //returns random player from array
     randPlayer = () => {
-        return (
-
-              this.setState({player: this.state.players[Math.floor(Math.random() * this.state.players.length)].name})
-
+       
+        // this.setState({player: this.state.selectedPlayers[Math.floor(Math.random() * this.state.selectedPlayers.length)]})
+        const thisPlayer = this.state.selectedPlayers[Math.floor(Math.random() * this.state.selectedPlayers.length)]
+        return(
+        alert(thisPlayer)
         )
+        // return (
+        //       (alert({player}, player, 'anounce', 5000))
+        // )
     }
+    // chosenPlayer = (player) => {
+    //     alert(player)
+    // }
     //generates checkbox for player
-    player = (players) => {
+    generatePlayer = (players) => {
         return(
             <div>
                 <label>{players.name}</label>
@@ -63,10 +72,9 @@ class RandomPlayerSelector extends Component {
         //     return <option>{X}</option>
         return(
             <div>
-                {this.state.players[0].name}
                 {this.state.players.map(
                         (player, i) =>
-                            <this.player
+                            <this.generatePlayer
                                 key={i}
                                 name={player.name}/>
                     )}
@@ -76,7 +84,7 @@ class RandomPlayerSelector extends Component {
                     Generate
                 </button>
                 <div>
-                    {this.state.player}
+                    
                 </div>
 
             </div>
