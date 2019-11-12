@@ -27,16 +27,22 @@ class Dice extends Component {
                     <img src = {Dice4}
                          id={"dice"}
                     onClick={clickedDice}/>
+
                     <img src = {Dice6}
                          id={"dice"}/>
+
                     <img src = {Dice8}
                          id={"dice"}/>
+
                     <img src = {Dice10}
                          id={"dice"}/>
+
                     <img src = {Dice12}
                          id={"dice"}/>
+
                     <img src = {Dice20}
                          id={"dice"}/>
+
                     <img src = {Coin}
                          id={"dice"}/>
 
