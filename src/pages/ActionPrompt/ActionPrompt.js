@@ -35,7 +35,7 @@ handleSubmit(e){
     this.setState({names:joined});
     this.setState({tempName:''});
 
-  //  alert("Names is now" + this.state.names);
+    alert("Names are now: " + this.state.names);
 }
 handlePlayers(e) {
     this.setState({player:e.target.value});
@@ -85,9 +85,9 @@ render() {
 
 function NewGame(props) {
     return (
-        <button onClick={props.onClick}>
+        <Button class = "newGame" onClick={props.onClick}>
             New Game?
-        </button>
+        </Button>
     );
 }
 
