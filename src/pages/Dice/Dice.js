@@ -23,28 +23,34 @@ class Dice extends Component {
                     <h1>Hey Guys, Dice here</h1>
                     <h1> Konichiwa!!!</h1>
 
+                    <table>
                     {/*First row of dices*/}
-                <tr id = "DiceRow1">
-                    <td> <img src = {Dice4} data-value = {"4"} id={"dice"}
-                              onClick={clickedDice}/></td>
-                    <td><img src = {Dice6} data-value = {6} id={"dice"}
-                             onClick={clickedDice}/></td>
-                    <td><img src = {Dice8} data-value = {8} id={"dice"}
-                             onClick={clickedDice}/></td>
-                    <td><img src = {Dice10} data-value = {10} id={"dice"}
-                             onClick={clickedDice}/></td>
-                </tr>
+                        <tr>
+                            <td> <img src = {Dice4} data-value = {"4"} id={"dice"}
+                                     onClick={clickedDice}/></td>
+                            <td><img src = {Dice6} data-value = {6} id={"dice"}
+                                     onClick={clickedDice}/></td>
+                            <td><img src = {Dice8} data-value = {8} id={"dice"}
+                                     onClick={clickedDice}/></td>
+                        </tr>
 
                     {/*second row of dices*/}
-                    <tr id = "DiceRow2">
-                    <td><img src = {Dice12} data-value = {12}  id={"dice"}
-                             onClick={clickedDice}/></td>
-                    <td><img src = {Dice20} data-value = {20} id={"dice"}
-                             onClick={clickedDice}/></td>
-                    <td><img src = {Coin} data-value = {2} id={"dice"}
-                             onClick={clickedDice}/></td>
+                        <tr>
+                            <td><img src = {Dice10} data-value = {10} id={"dice"}
+                                     onClick={clickedDice}/></td>
+                            <td><img src = {Dice12} data-value = {12}  id={"dice"}
+                                     onClick={clickedDice}/></td>
+                            <td><img src = {Dice20} data-value = {20} id={"dice"}
+                                     onClick={clickedDice}/></td>
+                        </tr>
 
-                    </tr>
+                        {/*third row*/}
+                        <tr>
+                            <td colSpan={"3"}><img src = {Coin} data-value = {2} id={"dice"}
+                                     onClick={clickedDice}/></td>
+                        </tr>
+
+                    </table>
                 </div>
             </div>
         );
