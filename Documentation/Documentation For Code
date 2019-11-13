@@ -1,0 +1,22 @@
+Class Components
+<!--
+    Class Name: --Class Name Here--
+    Class Usage: --Where this Class is called in other Components--
+    Class Reason: --What this class does, what is passed into it, what does it return, why is it used--
+-->
+Functions Inside Class
+<!--
+    Function Name: --Function Name Here--
+    Function Usage: --Who uses this function in the return--
+    Function Reason: --What this class does, what is passed into it, what does it return, why is it used--
+-->
+Component Functions Outside Of Class
+<!--
+    Function Name: --Function Name Here--
+    Function Usage: --Who uses this function in the return--
+    Function Reason: --What this class does, what is passed into it, what does it return, why is it used--
+-->
+Variables And Loops
+<!--
+    Reason: --What does it do, why is it being used--
+-->

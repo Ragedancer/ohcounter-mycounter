@@ -18,7 +18,7 @@ constructor(props) {
     this.state = {game: false};
     this.state = {entireGame:false};
     this.state = {player: 0 };
-    this.state = {tempName:''};
+    this.state = {tempName: ''  };
     this.state = {names: []};
 }
 
@@ -26,9 +26,6 @@ handleGame() {
     this.setState({game: true});
 }
 handleSubmit(e){
-
-
-
     e.preventDefault();
     let temp = this.state.tempName;
     let joined = this.state.names.concat(temp);
@@ -100,11 +97,15 @@ function ContinueGame(props) {
 }
 function ChoosePlayers(props) {
     return (
-        <select value = {props.value} onChange = {props.onChange} >
+        <select value = {props.value} onChange = {props.onChange} size = {8} >
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
             <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
         </select>
     );
 }
