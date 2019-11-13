@@ -22,14 +22,15 @@ class PlayerTab extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = { players : [ "Phil", "Sam", "Weston", "Jimmy", "Matheus" ]}
+        this.state = { players : [ "Phil", "Sam", "Weston", "Jimmy", "Matheus" ],
+            lifeCounter: 0, poisonCounter: 0, commanderCounterCost: 0, commanderDamageCounter: 0}
     }
 
     render(){
         return (
             <div className={"player-tab"}>
                 <FormControl>
-                    <RadioGroup name="player-tabs" >
+                    <RadioGroup name="player-tabs">
                         <FormControlLabel value="player0" control={<Radio />} label={this.state.players[0]}/>
                         <FormControlLabel value="player1" control={<Radio />} label={this.state.players[1]}/>
                         <FormControlLabel value="player2" control={<Radio />} label={this.state.players[2]}/>
