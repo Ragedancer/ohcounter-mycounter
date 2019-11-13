@@ -26,11 +26,16 @@ handleGame() {
     this.setState({game: true});
 }
 handleSubmit(e){
+
+
+
     e.preventDefault();
     let temp = this.state.tempName;
     let joined = this.state.names.concat(temp);
     this.setState({names:joined});
     this.setState({tempName:''});
+
+
 
     alert("Names are now: " + this.state.names);
 }
@@ -82,21 +87,33 @@ render() {
 
 function NewGame(props) {
     return (
+        <div>
+            <h2>What would you like to do?</h2>
         <Button class = "newGame" onClick={props.onClick}>
             New Game?
         </Button>
+        </div>
     );
 }
 
 function ContinueGame(props) {
     return (
-        <button onClick={props.onClick}>
-            Continue Game?
-        </button>
+        <div>
+            <h2>What would you like to do?</h2>
+            <Button class = "newGame" onClick={props.onClick}>
+                New Game?
+            </Button>
+            <Button onClick={props.onClick}>
+                Continue Game?
+            </Button>
+        </div>
+
     );
 }
 function ChoosePlayers(props) {
     return (
+        <div>
+            <h2>Number of Players</h2>
         <select value = {props.value} onChange = {props.onChange} size = {8} >
             <option value="1">1</option>
             <option value="2">2</option>
@@ -107,6 +124,7 @@ function ChoosePlayers(props) {
             <option value="7">7</option>
             <option value="8">8</option>
         </select>
+        </div>
     );
 }
 function ChooseNames(props) {
