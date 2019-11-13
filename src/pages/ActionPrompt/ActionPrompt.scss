@@ -4,9 +4,22 @@
     text-align: center;
 
 }
-#selectGame {
+body {
     background: red;
-    color: white;
     text-align: center;
 
+}
+div {
+    text-align:center;
+    background-color:red;
+    color:white;
+}
+button,input,select{
+    padding:5px 20px;
+    font:19.2px Marvel,Sans-Serifs;
+    color:#f7121f;
+    border-radius:10px;
+}
+button onclick{
+    background:#ffffff;
 }

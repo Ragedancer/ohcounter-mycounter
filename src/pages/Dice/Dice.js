@@ -20,27 +20,37 @@ class Dice extends Component {
         return (
             <div>
                 <div id = "main">
-                    <h1>Hi Guys Dice here</h1>
+                    <h1>Hey Guys, Dice here</h1>
                     <h1> Konichiwa!!!</h1>
 
-                <div id = "DiceBox">
-                    <img src = {Dice4}
-                         id={"dice"}
-                    onClick={clickedDice}/>
-                    <img src = {Dice6}
-                         id={"dice"}/>
-                    <img src = {Dice8}
-                         id={"dice"}/>
-                    <img src = {Dice10}
-                         id={"dice"}/>
-                    <img src = {Dice12}
-                         id={"dice"}/>
-                    <img src = {Dice20}
-                         id={"dice"}/>
-                    <img src = {Coin}
-                         id={"dice"}/>
+                    <table>
+                    {/*First row of dices*/}
+                        <tr>
+                            <td> <img src = {Dice4} data-value = {"4"} id={"dice"}
+                                     onClick={clickedDice}/></td>
+                            <td><img src = {Dice6} data-value = {6} id={"dice"}
+                                     onClick={clickedDice}/></td>
+                            <td><img src = {Dice8} data-value = {8} id={"dice"}
+                                     onClick={clickedDice}/></td>
+                        </tr>
 
-                    </div>
+                    {/*second row of dices*/}
+                        <tr>
+                            <td><img src = {Dice10} data-value = {10} id={"dice"}
+                                     onClick={clickedDice}/></td>
+                            <td><img src = {Dice12} data-value = {12}  id={"dice"}
+                                     onClick={clickedDice}/></td>
+                            <td><img src = {Dice20} data-value = {20} id={"dice"}
+                                     onClick={clickedDice}/></td>
+                        </tr>
+
+                        {/*third row*/}
+                        <tr>
+                            <td colSpan={"3"}><img src = {Coin} data-value = {2} id={"dice"}
+                                     onClick={clickedDice}/></td>
+                        </tr>
+
+                    </table>
                 </div>
             </div>
         );
@@ -48,7 +58,21 @@ class Dice extends Component {
 }
 
 function clickedDice(props) {
-    return (alert('testing'));
+    let result;
+    //gets the value that was assigned to each die
+    let value = props.target.getAttribute('data-value');
+    // trying to catch the coin
+    if(value==2){
+        let coin = Math.floor(Math.random() * value) + 1;
+        if(coin == 1) {
+            result = 'head';
+        } else
+           result = 'tail';
+        alert('You flipped a coin and got a ' + result )
+    } else { //if it isn't a coin then it rolls a corresponding dice instead
+        let diceRoll = Math.floor(Math.random() * value) + 1;
+        alert('You picked a ' + value + ' and rolled a ' + diceRoll);
+    }
 }
 
 //Need to export for other files to see -jimmy
