@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
 import Button from '@material-ui/core/Button';
 import './ActionPrompt.scss';
+import GameSelect from "../GameSelect/GameSelect";
+import NumPlayerSelect from "../PlayerSelect/NumPlayerSelect";
+import PlayerName from "../PlayerSelect/PlayerName";
 import App from '../App/App.js';
 import {checkCookie} from "../../utils/cookie";
 import {loadFile, loadFileContents, newTemplate} from "../../utils/template";
@@ -41,51 +44,36 @@ class ActionPrompt extends Component {
     }
     /*
            Function Name: handleEntireGame
-           Function Usage: Used by the state 'entireGame', which if is true, will call.
-           Function Reason: If there is a cookie that exists, this will run, and display the
-                            Continue Game on {button} to take the user to the game.
-           Function Passage: Nothing is passed in or returned. It will just run to take the user to the game.
-                             Passing in the Cookie.
+           Links to:
+           Function Usage: If a current game exist, the cookie will be passed into the game.
         */
     handleEntireGame() {
     }
     /*
         Function Name: handleGame
-        Function Usage: Used by the {button} if game is set to false.
-        Function Reason: Sets the game to true, which if that's true, displays number of players.
-        Function Passage: This function has nothing passed into it, nor does it return anything.
+        Function Usage: When the user starts a new game, the game is set to true.
     */
     handleGame() {
         this.setState({game: true});
     }
     /*
            Function Name: handlePlayers
-           Function Usage: Used by the the Select/Option DropDown assigned to {button}.
-           Function Reason: Assigns the number of Players or the state 'player'.
-           Function Passage: Passed in the value from the selection that then pulls in the value from the option,
-                             Doesn't return, it just assigns the state.
+           Function Usage: Passes in the number of players that is picked from the select and assigns it to player.
            */
     handlePlayers(e) {
         this.setState({player: e.target.value});
     }
     /*
     Function Name: handleNames
-    Function Usage: Used by onChange on the input assigned to {button}.
-    Function Reason: Adds a character to the state 'tempName', for each time the onChange is called from
-                     the input that is assigned to {button}.
-     Function Passage: Passes in a character from the input, which isn't returned, 'tempName'
-                       is used by handleSubmitNames().
+    Function Usage:Passes in a character from the input that is assigned to button and assigns it to tempName.
     */
     handleNames(e) {
         this.setState({tempName: e.target.value});
     }
     /*
         Function Name: handleSubmitNames
-        Function Usage: Used by the the Submit Button(along with input) that is assigned to {button}.
-        Function Reason: Prevents the submit button to taking the user to a different page, and adds and SetState the
-                         names to the state 'names' array.
-        Function Passage: The submit button is passed into the function and is stopped from going to a different page.
-                          The function doesn't specifically return anything, but does set the state.
+        Links to:ChooseNames
+        Function Usage: Once the user presses the submit button, the tempName is assigned to the names array
     */
     handleSubmitNames(e) {
         e.preventDefault();
@@ -96,7 +84,7 @@ class ActionPrompt extends Component {
         let newName = this.state.names.concat(temp);
         this.setState({names: newName});
         this.setState({tempName: ''});
-        alert("Names are now: " + this.state.names);
+
     }
 
 
@@ -117,19 +105,20 @@ class ActionPrompt extends Component {
             button = <ContinueGame onClick={this.handleEntireGame}/>;
         }
         if (game) {
-            button = <ChoosePlayers value={players} onChange={this.handlePlayers}/>;
+            button = <NumPlayerSelect value={players} onChange={this.handlePlayers}/>;
         } else {
             button = <NewGame onClick={this.handleGame}/>;
         }
         if (players > "0") {
             let i;
             for (i = 0; i < players; i++) {
-                button = <ChooseNames type="text" value={tempName} onChange={this.handleNames}
+                let name = "Player " + i + "";
+                button = <PlayerName type="text" value={tempName} onChange={this.handleNames} placeholder={name}
                                       onSubmit={this.handleSubmitNames}/>;
             }
         }
         if (names.length == players) {
-            button = <ChooseGame value = {gameType} onChange = {this.handleGameType}/>;
+            button = <GameSelect value = {gameType} onChange = {this.handleGameType}/>;
 
         }
         return (
@@ -144,9 +133,9 @@ function NewGame(props) {
     return (
         <div>
             <h2>What would you like to do?</h2>
-            <Button class="newGame" onClick={props.onClick}>
+            <button onClick={props.onClick}>
                 New Game?
-            </Button>
+            </button>
         </div>
     );
 }
@@ -165,50 +154,11 @@ function ContinueGame(props) {
 
     );
 }
-/*
-Called from the render of the main Class,
-props.value is the currents state of the number of Players
-props.onChange is the function that will run once the user selects a number
-*/
-function ChoosePlayers(props) {
-    return (
-        <div>
-            <h2>Number of Players</h2>
-            <select value={props.value} onChange={props.onChange} size={8}>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-            </select>
-        </div>
-    );
-}
 
-function ChooseNames(props) {
-    return (
-        <form onSubmit={props.onSubmit}>
-            <label>Player<input type={props.type} value={props.value} onChange={props.onChange}/></label>
-            <input type="submit" value="Submit"/>
-        </form>
-    );
-}
 
-function ChooseGame(props) {
-    return (
-        <div>
-            <h2>Pick a Game Type:</h2>
-            <select value={props.value} onChange={props.onChange} size={4}>
-                <option value="Commander">MTG Commander</option>
-                <option value="Standard">MTG Standard</option>
-                <option value="YGO">Yu-Gi-Oh</option>
-                <option value="Munch">Munchkin</option>
-            </select>
-        </div>
-    );
-}
+
+
+
+
 
 export default ActionPrompt;
