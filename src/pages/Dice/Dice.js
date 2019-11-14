@@ -7,7 +7,10 @@ import Dice12 from "./images/dice/d12.svg";
 import Dice20 from "./images/dice/d20.svg";
 import Coin from "./images/dice/Coin.svg";
 import './Dice.css'
+
+import icon from './images/dice/d4.svg'
 import {convertToElement, loadFileContents} from "../../utils/template";
+import Icon from "@material-ui/core/Icon";
 
 class Dice extends Component {
 
@@ -20,8 +23,10 @@ class Dice extends Component {
         return (
             <div>
                 <div id = "main">
+                    {/*<Icon fill={"#49c"} width={100} name={"dice4"} />*/}
+
                     <h1>Hey Guys, Dice is DONE!!!</h1>
-                    <input id = "result" value = "Click a Dice!"></input>
+                    <input id = "result" value = "Click a Dice!" ></input>
 
                     <table>
                     {/*First row of dices*/}
@@ -62,6 +67,7 @@ function clickedDice(props) {
     let result;
     //gets the value that was assigned to each die
     let value = props.target.getAttribute('data-value');
+
     // trying to catch the coin
     if(value==2){
         let coin = Math.floor(Math.random() * value) + 1;
@@ -77,6 +83,8 @@ function clickedDice(props) {
         //alert('You picked a ' + value + ' and rolled a ' + diceRoll);
         document.getElementById('result').value = diceRoll;
     }
+
+    document.getElementById('dice').className = 'classname'
 }
 
 //Need to export for other files to see -jimmy

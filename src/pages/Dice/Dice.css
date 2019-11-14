@@ -11,9 +11,19 @@ table {
 
 #result{
     text-align: center;
+    background-color: #fff;
     color: #000;
     font-size: 48px;
     width: 500px;
     height: 40px;
 }
 
+.classname{
+
+}
+@keyframes growShrink {
+    from {
+    }
+    to {
+    }
+}
