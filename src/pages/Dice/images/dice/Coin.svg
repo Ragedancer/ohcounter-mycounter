@@ -21,4 +21,5 @@
 
 	<circle cx="250" cy="250" r="250"/>
 	<text transform="matrix(1 0 0 1 36.3789 340.873)" class="coin-text">COIN</text>
+	<text x="50%" y="60%" text-anchor="middle" fill="#fff" stroke="#fff" font-size="10em">COIN</text>
 </svg>

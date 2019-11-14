@@ -20,9 +20,8 @@ class Dice extends Component {
         return (
             <div>
                 <div id = "main">
-                    <h1>Hey Guys, Dice here</h1>
-                    <h1> Konichiwa!!!</h1>
-                    <input id = "result" value = "click a dice"></input>
+                    <h1>Hey Guys, Dice is DONE!!!</h1>
+                    <input id = "result" value = "Click a Dice!"></input>
 
                     <table>
                     {/*First row of dices*/}

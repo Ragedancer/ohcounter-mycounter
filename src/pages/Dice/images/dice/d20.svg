@@ -19,4 +19,5 @@
 
 	<polygon points="500,500 0,500 250,0 "/>
 	<text transform="matrix(1 0 0 1 131.0532 459.1484)" class="dice-text">20</text>
+	<text x="50%" y="70%" text-anchor="middle" fill="#fff" stroke="#fff" font-size="10em">20</text>
 </svg>

@@ -19,4 +19,5 @@
 
 	<path id="path1401" d="M400,499.876H100L-0.125,200L250-0.125L499.875,200L400,499.876z"/>
 	<text transform="matrix(1 0 0 1 163.9531 375.7969)" class="dice-text">12</text>
+	<text x="50%" y="65%" text-anchor="middle" fill="#fff" stroke="#fff" font-size="10em">12</text>
 </svg>
