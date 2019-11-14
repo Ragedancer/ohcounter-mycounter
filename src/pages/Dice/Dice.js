@@ -20,13 +20,14 @@ class Dice extends Component {
         return (
             <div>
                 <div id = "main">
-                    <h1>Hey Guys, Dice here</h1>
-                    <h1> Konichiwa!!!</h1>
+                    <h1>Hey Guys, Dice is DONE!!!</h1>
+                    <input id = "result" value = "Click a Dice!"></input>
 
                     <table>
                     {/*First row of dices*/}
                         <tr>
-                            <td> <img src = {Dice4} data-value = {"4"} id={"dice"}
+                            <td id={"container"} background={"Dice4"}>
+                                <img src = {Dice4} data-value = {"4"} id={"dice"}
                                      onClick={clickedDice}/></td>
                             <td><img src = {Dice6} data-value = {6} id={"dice"}
                                      onClick={clickedDice}/></td>
@@ -68,10 +69,13 @@ function clickedDice(props) {
             result = 'head';
         } else
            result = 'tail';
-        alert('You flipped a coin and got a ' + result )
+        //alert('You flipped a coin and got a ' + result )
+        document.getElementById('result').value = result;
+
     } else { //if it isn't a coin then it rolls a corresponding dice instead
         let diceRoll = Math.floor(Math.random() * value) + 1;
-        alert('You picked a ' + value + ' and rolled a ' + diceRoll);
+        //alert('You picked a ' + value + ' and rolled a ' + diceRoll);
+        document.getElementById('result').value = diceRoll;
     }
 }
 
