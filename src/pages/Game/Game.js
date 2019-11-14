@@ -6,6 +6,11 @@ import CommanderCost from "./CommanderCost";
 import CommanderDamage from "./CommanderDamage";
 import './Game.scss';
 
+export function getCounters(){
+    const counterData = [{life: this.props.lifeCounter}, {poison: this.props.poisonCounter},
+        {costCounter: this.props.commanderCostCounter}, {damageCounter: this.props.commanderDamageCounter}]
+}
+
 class Game extends Component {
     render() {
         return (
