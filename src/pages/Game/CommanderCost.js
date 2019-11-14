@@ -1,7 +1,7 @@
 import React from "react";
 import Increment from "./Increment";
 import Decrement from "./Decrement";
-
+import './Game.scss';
 
 class CommanderCost extends React.Component {
     constructor(props) {
@@ -25,9 +25,9 @@ class CommanderCost extends React.Component {
         return (
             <div className={"commander-cost"}>
                 <h5 className={"title"}>Commander Cost</h5>
-                <Increment sendCounter={this.getCounter} counter={this.state.counter} hitPoints={2}/>
-                <h1 className={"commander-cost-points"}>{this.state.counter}</h1>
-                <Decrement sendCounter={this.getCounter} counter={this.state.counter} hitPoints={2}/>
+                <Increment className={"increment"} sendCounter={this.getCounter} counter={this.state.counter} hitPoints={2}/>
+                <h1 className={"counter-points"}>{this.state.counter}</h1>
+                <Decrement className={"decrement"} sendCounter={this.getCounter} counter={this.state.counter} hitPoints={2}/>
             </div>
         );
     }

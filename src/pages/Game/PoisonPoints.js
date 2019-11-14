@@ -1,6 +1,7 @@
 import React from "react";
 import Increment from "./Increment";
 import Decrement from "./Decrement";
+import './Game.scss';
 
 
 class PoisonPoints extends React.Component {
@@ -26,9 +27,9 @@ class PoisonPoints extends React.Component {
         return (
             <div className={"poison-points"}>
                 <h5 className={"title"}>Poison</h5>
-                <Increment sendCounter={this.getCounter} counter={this.state.counter} hitPoints={1}/>
-                <h1 className={"poison-points"}>{this.state.counter}</h1>
-                <Decrement sendCounter={this.getCounter} counter={this.state.counter} hitPoints={1}/>
+                <Increment className={"increment"} sendCounter={this.getCounter} counter={this.state.counter} hitPoints={1}/>
+                <h1 className={"counter-points"}>{this.state.counter}</h1>
+                <Decrement className={"decrement"} sendCounter={this.getCounter} counter={this.state.counter} hitPoints={1}/>
             </div>
         );
     }

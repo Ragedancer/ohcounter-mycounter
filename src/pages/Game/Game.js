@@ -4,11 +4,12 @@ import LifePoints from "./LifePoints";
 import PoisonPoints from "./PoisonPoints";
 import CommanderCost from "./CommanderCost";
 import CommanderDamage from "./CommanderDamage";
+import './Game.scss';
 
 class Game extends React.Component {
     render() {
         return (
-            <div className="App">
+            <div className="game-container">
                 <PlayerTab />
                 <LifePoints />
                 <PoisonPoints />
