@@ -1,0 +1,28 @@
+nav {background-color: #000;
+    color: #ffffff;
+    letter-spacing: 0.1em;
+    text-align: left;
+    font-weight: bold;
+    font-size: 1em;
+    display: block;}
+nav ul {list-style-type: none;
+    margin: 0;}
+nav li {display: inline-block;
+    padding: 0.5em;}
+nav a {text-decoration: none;
+    display: block;}
+nav ul ul {position: absolute;
+    background-color: #f00;
+    padding: 0;
+    text-align: center;
+    display: none;}
+nav ul ul li {display: block;
+    border: 1px solid #000;
+    width: 8em;
+    padding-left: 1em;
+    margin-left:0;}
+nav li:hover ul {display: block;
+    text-align: center;}
+nav a:link {color: #fff;}
+nav a:visited {color: #fff;}
+nav a:hover {color: #87cefa;}

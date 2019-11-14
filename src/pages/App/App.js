@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import "./App.scss";
+import "./App.css";
 import ActionPrompt from "../ActionPrompt/ActionPrompt";
 import Dice from "../Dice/Dice";
 import {Switch, Route, Link} from "react-router-dom";
@@ -7,7 +7,6 @@ import {checkCookie} from "../../utils/cookie";
 import {withCookies} from "react-cookie";
 import Game from "../Game/Game";
 import RandomPlayerSelector from "../RandomPlayerSelector/RandomPlayerSelector";
-
 
 // Toggle show on element
 function toggleShow(element) {
@@ -57,7 +56,6 @@ class App extends Component {
 
                  {/*<ActionPrompt  gameFile= {gameFile} />*/}
 
-
                 <ActionPrompt />
                 {/*<div id="menu" className="slide-in from-left">*/}
                 {/*    <h1 className="logo">Oh Counter, My Counter</h1>*/}
@@ -70,44 +68,24 @@ class App extends Component {
                 {/*</div>*/}
                 {/*<Link to='/Game'>Game</Link>*/}
 
-                    <nav>
+                    <nav><ul><li>
+                        Index
                         <ul>
-                            <li>
-                                <Link to="/actionprompt">Action Prompt</Link>
-                            </li>
-                            <li>
-                                <Link to="/numplayerselect">Select Player</Link>
-                            </li>
-                            <li>
-                                <Link to="/gameselect">Game Select</Link>
-                            </li>
-                            <li>
-                                <Link to="/game">Game</Link>
-                            </li>
-                            <li>
-                                <Link to="/playername">Player Name</Link>
-                            </li>
-                            <li>
-                                <Link to="/randomplayer">Random Player Selector</Link>
-                            </li>
-                            <li>
-                                <Link to="/dice">Dice</Link>
-                            </li>
+                            <li><Link to="/actionprompt">Action Prompt</Link></li>
+                            <li><Link to="/numplayerselect">Select Player</Link></li>
+                            <li><Link to="/gameselect">Game Select</Link></li>
+                            <li><Link to="/game">Game</Link></li>
+                            <li><Link to="/playername">Player Name</Link></li>
+                            <li><Link to="/randomplayer">Random Player Selector</Link></li>
+                            <li><Link to="/dice">Dice</Link></li>
                         </ul>
-                    </nav>
+                    </li></ul></nav>
+
                     <Switch>
-                        <Route path="/actionprompt">
-                            <ActionPrompt />
-                        </Route>
-                        <Route path="/dice">
-                           <Dice />
-                        </Route>
-                        <Route path="/game">
-                            <Game />
-                        </Route>
-                        <Route path={"/randomplayer"}>
-                            <RandomPlayerSelector />
-                        </Route>
+                        <Route path="/actionprompt"><ActionPrompt /></Route>
+                        <Route path="/dice"><Dice /></Route>
+                        <Route path="/game"><Game /></Route>
+                        <Route path={"/randomplayer"}><RandomPlayerSelector /></Route>
                     </Switch>
             </div>
         );
