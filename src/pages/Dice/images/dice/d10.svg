@@ -17,7 +17,7 @@
 <glyph unicode="1" horiz-adv-x="210" d="M78,623l53,27l0,-649l-53,0z"/>
 </font>
 
-	<polygon points="440.244,366.785 249.302,500 59.756,366.785 249.302,0 "/>
-	<text transform="matrix(1 0 0 1 158.103 405.1973)" class="dice-text">10</text>
-	<text x="50%" y="70%" text-anchor="middle" fill="#fff" stroke="#fff" font-size="10em">10</text>
+	<polygon points="440.244,366.785 249.302,500 59.756,366.785 249.302,0 " fill="#fff"/>
+<!--	<text transform="matrix(1 0 0 1 158.103 405.1973)" class="dice-text">10</text>-->
+	<text x="50%" y="70%" text-anchor="middle" fill="#000" stroke="#fff" font-size="10em">10</text>
 </svg>
