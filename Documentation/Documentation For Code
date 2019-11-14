@@ -8,13 +8,15 @@ Functions Inside Class
 <!--
     Function Name: --Function Name Here--
     Function Usage: --Who uses this function in the return--
-    Function Reason: --What this class does, what is passed into it, what does it return, why is it used--
+    Function Reason: --What this function does, why is it used--
+    Function Passage: -- what is passed into it, what does it return --
 -->
 Component Functions Outside Of Class
 <!--
-    Function Name: --Function Name Here--
+    Function Name: --Component Name Here--
     Function Usage: --Who uses this function in the return--
-    Function Reason: --What this class does, what is passed into it, what does it return, why is it used--
+    Function Reason: --What this function does, why is it used--
+    Function Passage: -- what is passed into it, what does it return --
 -->
 Variables And Loops
 <!--
