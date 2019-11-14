@@ -1,43 +1,60 @@
 import React, { Component } from "react";
+import Checkbox from '@material-ui/core/Checkbox'
+import FormControlLabel from '@material-ui/core/FormControlLabel'
+import FormControl from '@material-ui/core/FormControl'
+import red from '@material-ui/core/colors/red'
+import white from '@material-ui/core/colors/'
+import {MuiFormControlLabel, MuiThemeProvider} from '@material-ui/core/styles'
+import { createMuiTheme, Backdrop } from "@material-ui/core";
+import { withStyles } from "@material-ui/styles";
+import color from "@material-ui/core/colors/amber";
+import './RandomPlayerSelector.scss' 
+// import classes from "*.module.css";
 
 
-
- // export function RandPlayer(players) {
- //     this.players[Math.floor(Math.random()*players.length)];
-// //
-// //     // if (players.length > 0) {
-// //     //     var pick = Math.floor(Math.random() * players.length);
-// //     //     alert('Player', players[pick].value, 'anounce', 5000);
-// //     // }
-// //     // else {
-// //     //     alert('Error', 'At least one player must be selected.', 'error', 3000);
-// //     // }
-  //  }
-//creating array to test random player selection
+// const theme = createMuiTheme({
+//     overrides: {
+//         root: {
+//     FormControlLabel: {
+//         label: {
+    
+//         color: 'secondary'
+        
+//     }
+// }
+//     }
+// },
+//     checked: {}
+// });
 
 class RandomPlayerSelector extends Component {
-    // no idea if i need this
     state = {
         players: [
             {name: "player 1"},
             {name: "player 2"},
             {name: "player 3"},
-            {name: "player 4"},
-            {name: "fuck you"}
+            {name: "player 4"}        
         ],
         selectedPlayers: [],
-        player: ""
-    }
+        isChecked: false
+        }
+
+
+
+        
+
+
+
     //taken from internet
     onChange(e) {
         //gets current state of players from json
-        const selectedPlayers = this.state.selectedPlayers;
+        let selectedPlayers = this.state.selectedPlayers;
         //determines position in array
         let index
         if (e.target.checked) {
             selectedPlayers.push(e.target.value);
         } else {
-            index = selectedPlayers.indexOf(+e.target.value);
+            index = selectedPlayers.indexOf(e.target.value);
             selectedPlayers.splice(index, 1)
         }
         this.setState({selectedPlayers: selectedPlayers})
@@ -45,49 +62,57 @@ class RandomPlayerSelector extends Component {
  //returns random player from array
     randPlayer = () => {
        
-        // this.setState({player: this.state.selectedPlayers[Math.floor(Math.random() * this.state.selectedPlayers.length)]})
         const thisPlayer = this.state.selectedPlayers[Math.floor(Math.random() * this.state.selectedPlayers.length)]
         return(
         alert(thisPlayer)
         )
-        // return (
-        //       (alert({player}, player, 'anounce', 5000))
-        // )
     }
-    // chosenPlayer = (player) => {
-    //     alert(player)
-    // }
-    //generates checkbox for player
-    generatePlayer = (players) => {
+
+
+
+    generatePlayer = (player) => {
         return(
-            <div>
-                <label>{players.name}</label>
-                <input type="checkbox" id={players.name} value={players.name} onChange={this.onChange.bind(this)}/>
-            </div>
+            <FormControlLabel 
+            id={player.name}
+            value={player.name}
+            checked={Checkbox.checked} 
+            control={
+                <Checkbox 
+                     /> 
+                } 
+            label={player.name} 
+            onChange={this.onChange.bind(this)}
+             />
+                        
         )
     }
     render() {
 
-        // let selection = function (X) {
-        //     return <option>{X}</option>
         return(
+            // <MuiThemeProvider theme={theme}>
             <div>
+
+            <FormControl>
                 {this.state.players.map(
                         (player, i) =>
                             <this.generatePlayer
                                 key={i}
                                 name={player.name}/>
                     )}
-                    {/*should generate random player and display it*/}
-
                 <button onClick={this.randPlayer.bind(this)}>
                     Generate
                 </button>
+            </FormControl>
+
+                    {/*should generate random player and display it*/}
+
+
                 <div>
                     
                 </div>
 
             </div>
+            // </MuiThemeProvider>
 
         )
     }
