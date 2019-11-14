@@ -22,9 +22,9 @@ class Game extends Component {
                     <td colSpan={"3"}> <LifePoints /></td>
                 </tr>
                 <tr>
-                    <td><PoisonPoints /></td>
-                    <td><CommanderCost /></td>
-                    <td><CommanderDamage /></td>
+                    <td id={"box"}><PoisonPoints /></td>
+                    <td id={"box"}><CommanderCost /></td>
+                    <td id={"box"}><CommanderDamage /></td>
                 </tr>
 
             </table>
