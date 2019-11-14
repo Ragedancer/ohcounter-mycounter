@@ -1,5 +1,9 @@
-.game-container {
+table {
   background-color: white;
+  width: auto;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 .title, .counter-points, .gain, .loss {
   background-color: white;
@@ -23,5 +27,5 @@
   background-color: white;
 }
 .Mui-check {
-  color: #f7121f;
+  color: #000;
 }

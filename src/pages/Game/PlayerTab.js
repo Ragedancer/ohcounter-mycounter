@@ -17,8 +17,8 @@ class PlayerTab extends Component {
         return(
         // mapping the state iterates the array of state of players so player names can be retrieved
         this.state.players.map((player, index) => (
-            <FormControlLabel key={"player" + index} className={"player-tab"} id={"player" + index}
-                              value={"player" + index} control={<Radio className={"radio-button"} />} label={player.name}/>
+            <td><FormControlLabel key={"player" + index} className={"player-tab"} id={"player" + index}
+                                  value={"player" + index} control={<Radio className={"radio-button"} />} label={player.name}/></td>
         )))
     }
 
@@ -35,12 +35,12 @@ class PlayerTab extends Component {
         return (
             <div className={"content"}>
                 {/*FormControl is Material-UI html form and RadioGroup too*/}
-                <FormControl>
+                <table><FormControl>
                     <RadioGroup className={"player-tabs"}>
                         {/*Calling the generateTab() to generate the player tab radio buttons*/}
-                        {this.generateTabs()}
+                        <tr>{this.generateTabs()}</tr>
                     </RadioGroup>
-                </FormControl>
+                </FormControl></table>
             </div>
         );
     }

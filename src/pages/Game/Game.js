@@ -14,13 +14,20 @@ export function getCounters(){
 class Game extends Component {
     render() {
         return (
-            <div className="game-container">
-                <PlayerTab />
-                <LifePoints />
-                <PoisonPoints />
-                <CommanderCost />
-                <CommanderDamage />
-            </div>
+            <table>
+                <tr>
+                    <td colSpan={"3"}><PlayerTab /></td>
+                </tr>
+                <tr>
+                    <td colSpan={"3"}> <LifePoints /></td>
+                </tr>
+                <tr>
+                    <td><PoisonPoints /></td>
+                    <td><CommanderCost /></td>
+                    <td><CommanderDamage /></td>
+                </tr>
+
+            </table>
         );
     }
 }
