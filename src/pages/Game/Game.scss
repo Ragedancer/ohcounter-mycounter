@@ -1,7 +1,7 @@
 .game-container {
   background-color: white;
 }
-.title, .counter-points, .increment-icon, .decrement-icon {
+.title, .counter-points, .gain, .loss {
   background-color: white;
   color: #f7121f;
 }
@@ -9,7 +9,10 @@
 .operator, .icon-num {
   color: #f7121f;
 }
-
+.counter-name, .content, .player-tabs, .player-tab, .radio-button {
+  color: #f7121f;
+  background-color: white;
+}
 #increment {
   alignment: left;
 }

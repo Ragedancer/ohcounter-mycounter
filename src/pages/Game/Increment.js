@@ -1,4 +1,4 @@
-import React from "react";
+import React, {Component} from 'react';
 import IconButton from "@material-ui/core/IconButton";
 import SvgIcon from '@material-ui/core/SvgIcon';
 import './Game.scss';
@@ -6,7 +6,7 @@ import './Game.scss';
 
 
 //onClick={increment(this.state.lifePoints, this.prop.incrementNums[2])}
-class Increment extends React.Component {
+class Increment extends Component {
     //function increment to change the data
     increment = (newCounter,  newHitPoints) =>{
         newCounter += newHitPoints;
@@ -16,7 +16,7 @@ class Increment extends React.Component {
 
     render(){
         return (
-            <div className={"increment-icon"}>
+            <div className={"gain"}>
                 {/*OnClick is used to execute the increment function, this statement means the function in the Increment class.
                 the props in the increment parameters are the data passed from LifePoints class or the attributes injected in the Increment tag*/}
                 <IconButton onClick={() => this.increment(this.props.counter, this.props.hitPoints)}>
