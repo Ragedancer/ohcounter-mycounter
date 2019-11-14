@@ -10,16 +10,27 @@ class PlayerTab extends Component {
     constructor(props) {
         super(props);
         this.state = { players : [ {name: "Phil"}, {name: "Sam"}, {name: "Weston"}, {name: "Jimmy"}, {name: "Matheus"}],
-            primary: 0, secondary: 0, commanderCounterCost: 0, commanderDamageCounter: 0}
+            savedCounter: [{lifeCounter: 0}, {poisonCounter: 0}, {commanderCostCounter: 0}, {commanderDamageCounter: 0}]}
     }
     //Generating the player tab radio buttons
     generateTabs = () => {
         return(
         // mapping the state iterates the array of state of players so player names can be retrieved
         this.state.players.map((player, index) => (
-            <FormControlLabel key={"player" + index} className={"player-tab"} id={"player" + index} value={"player" + index} control={<Radio className={"radio-button"} />} label={player.name}/>
+            <FormControlLabel key={"player" + index} className={"player-tab"} id={"player" + index}
+                              value={"player" + index} control={<Radio className={"radio-button"} />} label={player.name}/>
         )))
     }
+
+    getCounterData = (life, poison, cC, cD) => {
+        let newState = this.state;
+        newState = {
+            savedCounter: [{lifeCounter: this.props.life},{poisonCounter: poison},
+                {commanderCostCounter: cC},{commanderDamageCounter: cD}]
+        }
+        this.setState(newState);
+    }
+
     render(){
         return (
             <div className={"content"}>

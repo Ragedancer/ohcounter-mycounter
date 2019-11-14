@@ -9,7 +9,7 @@
 .operator, .icon-num {
   color: #f7121f;
 }
-.counter-name, .content, .player-tabs, .player-tab, .radio-button {
+.counter-name, .content, .player-tabs, .player-tab {
   color: #f7121f;
   background-color: white;
 }
@@ -18,4 +18,10 @@
 }
 #decrement {
   alignment: right;
+}
+.MuiRadio-root {
+  background-color: white;
+}
+.Mui-check {
+  color: #f7121f;
 }
