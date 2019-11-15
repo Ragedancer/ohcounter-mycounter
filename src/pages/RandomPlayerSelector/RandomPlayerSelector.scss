@@ -1,0 +1,28 @@
+
+.MuiFormControlLabel-root{
+    background-color: white;
+    color:black;
+    border: 5pt solid black;
+    padding: 5pt;
+    width: auto;
+    height: auto;
+    position: center;
+    text-align: center;
+    :checked {
+        background-color: red;
+    color: white;
+    fill: red;
+
+    }
+    
+
+
+        
+ } 
+// .MuiFormControlLabel-root:checked{
+    
+
+// }
+
+
+

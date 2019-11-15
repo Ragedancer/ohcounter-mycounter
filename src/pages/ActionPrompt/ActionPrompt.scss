@@ -1,6 +1,61 @@
 #main {
+    background: red;
+    color: white;
+    text-align: center;
 
 }
-#selectGame {
+body {
+    background: red;
+    text-align: center;
 
+}
+div {
+    text-align:center;
+    background-color:red;
+    color:white;
+}
+button{
+    padding:5px 20px;
+}
+button,input,option{
+    padding:5px 20px;
+    font:19.2px Marvel,Sans-Serifs;
+    color:#f7121f;
+    border-radius:10px;
+    outline: 0;
+    transition: background 2s;
+}
+select{
+    height:44px;
+    background:transparent;
+    border:1px solid red;
+    display:inline-block;
+    vertical-align: top;
+    overflow: hidden;
+    outline: 0;
+}
+option:hover{
+    background:white;
+    color:red;
+}
+option onclick{
+
+    background-color:white;
+    outline:0;
+}
+
+option{
+    color:white;
+    border:3px solid white;
+    display:inline-block;
+    vertical-align: top;
+    overflow: hidden;
+}
+h2{
+    color:#ffffff;
+    font: 14.4px "Exo 2", Sans-Serif;
+    margin:0px 0px 9.6px;
+}
+button onclick{
+    background:#ffffff;
 }

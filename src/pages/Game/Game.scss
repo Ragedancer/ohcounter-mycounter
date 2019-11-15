@@ -1,0 +1,35 @@
+//table {
+//  background-color: white;
+//  width: auto;
+//  height: auto;
+//  margin-left: auto;
+//  margin-right: auto;
+//}
+.title, .counter-points, .gain, .loss {
+  background-color: white;
+  color: #f7121f;
+}
+
+.operator, .icon-num {
+  color: #f7121f;
+}
+.counter-name, .content, .player-tabs, .player-tab {
+  color: #f7121f;
+  background-color: white;
+}
+#increment {
+  alignment: left;
+}
+#decrement {
+  alignment: right;
+}
+.MuiRadio-root {
+  background-color: white;
+}
+.Mui-check {
+  color: #000;
+}
+
+#box{
+  width: 200px;
+}
