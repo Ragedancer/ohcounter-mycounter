@@ -33,10 +33,10 @@ class LifePoints extends Component {
                 {/* to send data to child components inject with the variables sendLifePoints, lifePoints, hitPoints. you can send functions, variable, etc.*/}
                 <Increment className={"increment"} id="incrementTen" sendCounter={this.getCounter} counter={this.state.counter} hitPoints={10}/>
                 <Decrement className={"decrement"} id="decrementTen" sendCounter={this.getCounter} counter={this.state.counter} hitPoints={10}/>
-                <Increment className={"increment"} id="incrementTen" sendCounter={this.getCounter} counter={this.state.counter} hitPoints={5}/>
-                <Decrement className={"decrement"} id="decrementTen" sendCounter={this.getCounter} counter={this.state.counter} hitPoints={5}/>
-                <Increment className={"increment"} id="incrementTen" sendCounter={this.getCounter} counter={this.state.counter} hitPoints={1}/>
-                <Decrement className={"decrement"} id="decrementTen" sendCounter={this.getCounter} counter={this.state.counter} hitPoints={1}/>
+                <Increment className={"increment"} id="incrementFive" sendCounter={this.getCounter} counter={this.state.counter} hitPoints={5}/>
+                <Decrement className={"decrement"} id="decrementFive" sendCounter={this.getCounter} counter={this.state.counter} hitPoints={5}/>
+                <Increment className={"increment"} id="incrementOne" sendCounter={this.getCounter} counter={this.state.counter} hitPoints={1}/>
+                <Decrement className={"decrement"} id="decrementOne" sendCounter={this.getCounter} counter={this.state.counter} hitPoints={1}/>
             </div>
         );
     }

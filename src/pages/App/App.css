@@ -23,13 +23,14 @@
     background: #F9F9F9;
     border: 1px solid #AAA;
     border-bottom: 1px solid #777;
-    color: #282D31;
+    color: #f7121f;
     font-weight: bold;
     z-index: 2;
     position: relative;
     -webkit-transition: border-radius .1s linear, background .1s linear, z-index 0s linear;
     -webkit-transition-delay: .8s;
     text-align: center;
+    font-family: Marvel, Sans-Serif, sans-serif;
 }
 
 #demo .parent:hover,
@@ -84,10 +85,11 @@
 
 #demo .content ul a {
     text-decoration: none;
+    color: white;
 }
 
 #demo .content li:hover {
-    background: #eee;
+    background: #B61217;
     color: #fff;
 }
 

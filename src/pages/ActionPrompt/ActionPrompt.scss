@@ -7,6 +7,7 @@
 body {
     background: red;
     text-align: center;
+    font-size: large;
 
 }
 div {
@@ -14,9 +15,29 @@ div {
     background-color:red;
     color:white;
 }
-button{
-    padding:5px 20px;
+button {
+    display: inline-block;
+    padding: .938em 1.875em;
+    border: .094em solid white;
+    border-radius: .625em;
+    background-color: #ffff;
+    box-shadow: 0 .375em .313em -0.313em rgba(0,0,0,.8), inset 0 .063em rgba(255,255,255,.4), inset 0 -0.188em rgba(0,0,0,.15);
+    color: #f7121f;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-shadow: 0 .063em rgba(0,0,0,.3);
+    cursor: pointer;
+    font: bold 2rem sans-serif;
 }
+button:hover {
+    background-color: #f7121f;
+    box-shadow: 0 .125em rgba(255,255,255,.4), inset 0 .063em rgba(255,255,255,.4), inset 0 -0.188em #f7121f;
+    color: #ffff;
+}
+button:active {
+    box-shadow: inset 0 0 1.094em #E1171E, inset 0 .063em #CE151B, inset 0 -0.188em #DE0910, 0 .063em rgba(255,255,255,.4);
+}
+
 button,input,option{
     padding:5px 20px;
     font:19.2px Marvel,Sans-Serifs;
@@ -55,6 +76,8 @@ h2{
     color:#ffffff;
     font: 14.4px "Exo 2", Sans-Serif;
     margin:0px 0px 9.6px;
+    font-size: 32px;
+    text-shadow: 1px 1px #070303;
 }
 button onclick{
     background:#ffffff;
