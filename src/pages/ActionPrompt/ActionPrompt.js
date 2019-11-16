@@ -111,11 +111,13 @@ class ActionPrompt extends Component {
         }
         if (players > "0") {
             let i;
-            for (i = 0; i < players; i++) {
-                let name = "Player " + i + "";
-                button = <PlayerName type="text" value={tempName} onChange={this.handleNames} placeholder={name}
-                                      onSubmit={this.handleSubmitNames}/>;
+            let pn = "Player ";
+            for(i = "0";i<players;i++){
+                alert(i);
+                pn = pn + i + "";
+                button = <PlayerName type = {"text"} value = {tempName} onChange = {this.handleNames} onSubmit = {this.handleSubmitNames} placeholder ={"player "}/>
             }
+
         }
         if (names.length == players) {
             button = <GameSelect value = {gameType} onChange = {this.handleGameType}/>;
