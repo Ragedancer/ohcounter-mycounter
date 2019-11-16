@@ -14,7 +14,7 @@ export function getCounters(){
 class Game extends Component {
     render() {
         return (
-            <table className={"noMatheus"}>
+            <table className={"myThighUs"}>
                 <tr>
                     <td colSpan={"3"}><PlayerTab /></td>
                 </tr>
