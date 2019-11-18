@@ -96,7 +96,7 @@ class App extends Component {
                                 <li><Link to="/dice">Dice</Link></li>
                             </ul>
                         </div>
-                        <div className="parent">Ham</div>
+                        <div className="parent">Menu</div>
                     </div>
                 </div>
                     <Switch>
