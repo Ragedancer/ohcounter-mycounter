@@ -3,7 +3,7 @@ import Button from '@material-ui/core/Button';
 import './ActionPrompt.scss';
 import GameSelect from "../GameSelect/GameSelect";
 import NumPlayerSelect from "../PlayerSelect/NumPlayerSelect";
-import PlayerName from "../PlayerSelect/PlayerName";
+//import PlayerName from "../PlayerSelect/PlayerName";
 import App from '../App/App.js';
 import {checkCookie} from "../../utils/cookie";
 import {loadFile, loadFileContents, newTemplate} from "../../utils/template";
@@ -25,6 +25,7 @@ class ActionPrompt extends Component {
         this.handleEntireGame = this.handleEntireGame.bind(this);
         this.handleSubmitNames = this.handleSubmitNames.bind(this);
         this.handleNames = this.handleNames.bind(this);
+        this.handleGameType = this.handleGameType.bind(this);
         //spot to pass in cookie
         /*
         game: Is used to start a new game once it's true.
@@ -38,9 +39,8 @@ class ActionPrompt extends Component {
         this.state = {entireGame: false};
         this.state = {player: 0};
         this.state = {tempName: ''};
-        this.state = {gameType: ''};
+        this.state = {gameType: 0};
         this.state = {names: []};
-
     }
     /*
            Function Name: handleEntireGame
@@ -81,13 +81,15 @@ class ActionPrompt extends Component {
         let temp = this.state.tempName;
         //newName is the current state 'names' which then concatenates the current existing array with a new input.
         //Concatenating is used to combine 2 arrays, but in this instance is adding a new name to the state.
+        alert("New Player: " + temp + " joined the game!");
         let newName = this.state.names.concat(temp);
         this.setState({names: newName});
         this.setState({tempName: ''});
 
     }
-
-
+    handleGameType(e){
+        this.setState({gameType:e.target.value});
+    }
 
 
     render() {
@@ -111,18 +113,21 @@ class ActionPrompt extends Component {
         }
         if (players > "0") {
             let i;
-            let pn = "Player ";
-            for(i = "0";i<players;i++){
-                alert(i);
-                pn = pn + i + "";
-                button = <PlayerName type = {"text"} value = {tempName} onChange = {this.handleNames} onSubmit = {this.handleSubmitNames} placeholder ={"player "}/>
+            for(i = 0;i<players;i++){
+                button = <PlayerName type={"text"} value={tempName} onChange={this.handleNames} onSubmit={this.handleSubmitNames}/>
             }
 
         }
         if (names.length == players) {
+            alert(names);
             button = <GameSelect value = {gameType} onChange = {this.handleGameType}/>;
 
         }
+        if(gameType == "Commander")
+        {
+            button = <Button>This would take the user to the Game</Button>
+        }
+
         return (
             <form onSubmit={this.handleSubmitNames}>
                 {button}
@@ -158,7 +163,13 @@ function ContinueGame(props) {
 }
 
 
-
+function PlayerName(props){
+return(
+    <form onSubmit={props.onSubmit}>
+        <label><input type={props.type} value={props.value}  onChange={props.onChange} /></label>
+        <input type="submit" value="Submit"/>
+    </form>);
+}
 
 
 
