@@ -25,7 +25,6 @@ class Dice extends Component {
                 <div id = "main">
                     {/*<Icon fill={"#49c"} width={100} name={"dice4"} />*/}
 
-                    <h1>Hey Guys, Dice is DONE!!!</h1>
                     <input id = "result" value={"Click a Dice!"} ></input>
 
                     <table>

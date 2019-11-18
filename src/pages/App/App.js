@@ -7,6 +7,9 @@ import {checkCookie} from "../../utils/cookie";
 import {withCookies} from "react-cookie";
 import Game from "../Game/Game";
 import RandomPlayerSelector from "../RandomPlayerSelector/RandomPlayerSelector";
+import NumPlayerSelect from "../PlayerSelect/NumPlayerSelect";
+import PlayerName from "../PlayerSelect/PlayerName";
+import GameSelect from "../GameSelect/GameSelect";
 
 // Toggle show on element
 function toggleShow(element) {
@@ -103,6 +106,10 @@ class App extends Component {
                         <Route path="/dice"><Dice /></Route>
                         <Route path="/game"><Game /></Route>
                         <Route path={"/randomplayer"}><RandomPlayerSelector /></Route>
+                        <Route path="/numplayerselect"><NumPlayerSelect /></Route>
+                        <Route path="/playername"><PlayerName /></Route>
+                        <Route path="/gameselect"><GameSelect /></Route>
+
                     </Switch>
             </div>
         );
