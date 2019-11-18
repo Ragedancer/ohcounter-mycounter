@@ -2,6 +2,7 @@
   background-color: #fff;
   width: 800px;
   height: auto;
+
   margin: auto;
 }
 .title, .counter-points, .gain, .loss {
@@ -15,8 +16,9 @@
 .counter-name, .content, .player-tabs, .player-tab {
   color: #f7121f;
   background-color: white;
-  font-size: 24px;
+  //font-size: 24px;
 }
+
 #increment {
   alignment: left;
 }

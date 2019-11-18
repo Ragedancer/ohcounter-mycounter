@@ -2,9 +2,7 @@ import React, {Component} from 'react';
 import "./App.css";
 import ActionPrompt from "../ActionPrompt/ActionPrompt";
 import Dice from "../Dice/Dice";
-import {Switch, Route, Link} from "react-router-dom";
-import {checkCookie} from "../../utils/cookie";
-import {withCookies} from "react-cookie";
+import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 import Game from "../Game/Game";
 import RandomPlayerSelector from "../RandomPlayerSelector/RandomPlayerSelector";
 import NumPlayerSelect from "../PlayerSelect/NumPlayerSelect";
@@ -83,24 +81,24 @@ class App extends Component {
                     {/*        <li><Link to="/dice">Dice</Link></li>*/}
                     {/*    </ul>*/}
                     {/*</input></nav>*/}
-
+                <Router>
                 <div id="demo">
                     <div className="wrapper">
                         <div className="content">
+
                             <ul>
-                                <a href="#"><li><Link to="/actionprompt">Action Prompt</Link></li></a>
-                                <a href="#"><li><Link to="/numplayerselect">Select Player</Link></li></a>
-                                <a href="#"><li><Link to="/gameselect">Game Select</Link></li></a>
-                                <a href="#"><li><Link to="/game">Game</Link></li></a>
-                                <a href="#"><li><Link to="/playername">Player Name</Link></li></a>
-                                <a href="#"><li><Link to="/randomplayer">Random Player Selector</Link></li></a>
-                                <a href="#"><li><Link to="/dice">Dice</Link></li></a>
+                                <li><Link to="/actionprompt">Action Prompt</Link></li>
+                                <li><Link to="/numplayerselect">Select Player</Link></li>
+                                <li><Link to="/gameselect">Game Select</Link></li>
+                                <li><Link to="/game">Game</Link></li>
+                                <li><Link to="/playername">Player Name</Link></li>
+                                <li><Link to="/randomplayer">Random Player Selector</Link></li>
+                                <li><Link to="/dice">Dice</Link></li>
                             </ul>
                         </div>
                         <div className="parent">Ham</div>
                     </div>
                 </div>
-
                     <Switch>
                         <Route path="/actionprompt"><ActionPrompt /></Route>
                         <Route path="/dice"><Dice /></Route>
@@ -111,9 +109,11 @@ class App extends Component {
                         <Route path="/gameselect"><GameSelect /></Route>
 
                     </Switch>
+            </Router>
             </div>
+
         );
     }
 }
 
-export default withCookies(App);
+export default App;
