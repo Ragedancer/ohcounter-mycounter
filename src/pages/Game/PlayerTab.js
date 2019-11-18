@@ -35,7 +35,7 @@ class PlayerTab extends Component {
         return (
             <div className={"content"}>
                 {/*FormControl is Material-UI html form and RadioGroup too*/}
-                <table><FormControl>
+                <table className={"player-table"}><FormControl>
                     <RadioGroup className={"player-tabs"}>
                         {/*Calling the generateTab() to generate the player tab radio buttons*/}
                         <tr>{this.generateTabs()}</tr>
