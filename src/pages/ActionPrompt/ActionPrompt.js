@@ -1,97 +1,148 @@
 import React, {Component} from 'react';
 import Button from '@material-ui/core/Button';
 import './ActionPrompt.scss';
+import GameSelect from "../GameSelect/GameSelect";
+import NumPlayerSelect from "../PlayerSelect/NumPlayerSelect";
+//import PlayerName from "../PlayerSelect/PlayerName";
 import App from '../App/App.js';
 import {checkCookie} from "../../utils/cookie";
 import {loadFile, loadFileContents, newTemplate} from "../../utils/template";
 import {clearScreen} from "../../utils/util";
 import {observable} from "mobx";
 
-class ActionPrompt extends Component{
-constructor(props) {
-    super(props);
-    this.handleGame = this.handleGame.bind(this);
-    this.handlePlayers = this.handlePlayers.bind(this);
-    this.handleEntireGame = this.handleEntireGame.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleNames = this.handleNames.bind(this);
-    this.state = {game: false};
-    this.state = {entireGame:false};
-    this.state = {player: 0 };
-    this.state = {tempName: ''  };
-    this.state = {names: []};
-}
-
-handleGame() {
-    this.setState({game: true});
-}
-handleSubmit(e){
-
-
-
-    e.preventDefault();
-    let temp = this.state.tempName;
-    let joined = this.state.names.concat(temp);
-    this.setState({names:joined});
-    this.setState({tempName:''});
-
-
-
-    alert("Names are now: " + this.state.names);
-}
-handlePlayers(e) {
-    this.setState({player:e.target.value});
-}
-handleNames(e){
-    this.setState({tempName:e.target.value});
-  //  alert("Names " + this.state.names);
-}
-handleEntireGame(){}
-
-render() {
-    const game = this.state.game;
-    const entireGame = this.state.entireGame;
-    const players = this.state.player;
-    let p = this.state.player;
-    let name = this.state.tempName;
-    let nameList = this.state.names;
-    let button;
-    if (entireGame) {
-        button = <ContinueGame onClick={this.handleEntireGame} />;
+/*  Class Name: ActionPrompt
+  Class Usage: Called by <App/>, or from the sidebar to start a new game.
+  Class Reason: This class takes in all the information needed to start a game, it
+                will be passed in a cookie if there is a current existing game. It
+                will return all the data that is needed in the game.
+                (Game Data: Number of Players, Player Names, Game Type)
+                It is being used to start the game.*/
+class ActionPrompt extends Component {
+    constructor(props) {
+        super(props);
+        this.handleGame = this.handleGame.bind(this);
+        this.handlePlayers = this.handlePlayers.bind(this);
+        this.handleEntireGame = this.handleEntireGame.bind(this);
+        this.handleSubmitNames = this.handleSubmitNames.bind(this);
+        this.handleNames = this.handleNames.bind(this);
+        this.handleGameType = this.handleGameType.bind(this);
+        //spot to pass in cookie
+        /*
+        game: Is used to start a new game once it's true.
+        entireGame: Is true once there's a cookie of a previous game.
+        player: Is 0, until the user selects how many players they want in their game.
+        tempName: Is used a temporary name holder until the user submits the name to the list of players.
+        names: Is the array that will hold the player names to be used in the game.
+        gameType: Is what the counter system is based around, Commander is the preset game type for this program.
+        */
+        this.state = {game: false};
+        this.state = {entireGame: false};
+        this.state = {player: 0};
+        this.state = {tempName: ''};
+        this.state = {gameType: 0};
+        this.state = {names: []};
     }
-    if (game) {
-        button = <ChoosePlayers value = {p} onChange={this.handlePlayers} />;
-    } else {
-        button = <NewGame onClick={this.handleGame} />;
+    /*
+           Function Name: handleEntireGame
+           Links to:
+           Function Usage: If a current game exist, the cookie will be passed into the game.
+        */
+    handleEntireGame() {
     }
-    if(players > "0")
-    {
-        let i;
-        for(i = 0;i<players;i++) {
-            button = <ChooseNames type="text" value={name} onChange={this.handleNames} onSubmit={this.handleSubmit}/>;
+    /*
+        Function Name: handleGame
+        Function Usage: When the user starts a new game, the game is set to true.
+    */
+    handleGame() {
+        this.setState({game: true});
+    }
+    /*
+           Function Name: handlePlayers
+           Function Usage: Passes in the number of players that is picked from the select and assigns it to player.
+           */
+    handlePlayers(e) {
+        this.setState({player: e.target.value});
+    }
+    /*
+    Function Name: handleNames
+    Function Usage:Passes in a character from the input that is assigned to button and assigns it to tempName.
+    */
+    handleNames(e) {
+        this.setState({tempName: e.target.value});
+    }
+    /*
+        Function Name: handleSubmitNames
+        Links to:ChooseNames
+        Function Usage: Once the user presses the submit button, the tempName is assigned to the names array
+    */
+    handleSubmitNames(e) {
+        e.preventDefault();
+        //temp is a variable to represent the tempName state.
+        let temp = this.state.tempName;
+        //newName is the current state 'names' which then concatenates the current existing array with a new input.
+        //Concatenating is used to combine 2 arrays, but in this instance is adding a new name to the state.
+        alert("New Player: " + temp + " joined the game!");
+        let newName = this.state.names.concat(temp);
+        this.setState({names: newName});
+        this.setState({tempName: ''});
+
+    }
+    handleGameType(e){
+        this.setState({gameType:e.target.value});
+    }
+
+
+    render() {
+        //game,entireGame,players,tempName,names
+        const game = this.state.game;
+        const entireGame = this.state.entireGame;
+        const players = this.state.player;
+        let tempName = this.state.tempName;
+        let names = this.state.names;
+        const gameType = this.state.gameType;
+
+        let button;
+
+        if (entireGame) {
+            button = <ContinueGame onClick={this.handleEntireGame}/>;
         }
-    if(nameList.length == players)
-    {
-        button = <ChooseGame />;
+        if (game) {
+            button = <NumPlayerSelect value={players} onChange={this.handlePlayers}/>;
+        } else {
+            button = <NewGame onClick={this.handleGame}/>;
+        }
+        if (players > "0") {
+            let i;
+            for(i = 0;i<players;i++){
+                button = <PlayerName type={"text"} value={tempName} onChange={this.handleNames} onSubmit={this.handleSubmitNames}/>
+            }
 
-    }
+        }
+        if (names.length == players) {
+            alert(names);
+            button = <GameSelect value = {gameType} onChange = {this.handleGameType}/>;
 
+        }
+        if(gameType == "Commander")
+        {
+            button = <Button>This would take the user to the Game</Button>
+        }
+
+        return (
+            <form onSubmit={this.handleSubmitNames}>
+                {button}
+            </form>
+        );
     }
-    return (
-        <form onSubmit={this.handleSubmit}>
-            {button}
-        </form>
-    );
-}
 }
 
 function NewGame(props) {
     return (
         <div>
             <h2>What would you like to do?</h2>
-        <Button class = "newGame" onClick={props.onClick}>
-            New Game?
-        </Button>
+            <button onClick={props.onClick}>
+                New Game?
+            </button>
         </div>
     );
 }
@@ -100,7 +151,7 @@ function ContinueGame(props) {
     return (
         <div>
             <h2>What would you like to do?</h2>
-            <Button class = "newGame" onClick={props.onClick}>
+            <Button class="newGame" onClick={props.onClick}>
                 New Game?
             </Button>
             <Button onClick={props.onClick}>
@@ -110,34 +161,17 @@ function ContinueGame(props) {
 
     );
 }
-function ChoosePlayers(props) {
-    return (
-        <div>
-            <h2>Number of Players</h2>
-        <select value = {props.value} onChange = {props.onChange} size = {8} >
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-        </select>
-        </div>
-    );
+
+
+function PlayerName(props){
+return(
+    <form onSubmit={props.onSubmit}>
+        <label><input type={props.type} value={props.value}  onChange={props.onChange} /></label>
+        <input type="submit" value="Submit"/>
+    </form>);
 }
-function ChooseNames(props) {
-    return (
-        <form onSubmit={props.onSubmit}>
-            <label>Player<input type = {props.type}value = {props.value} onChange = {props.onChange}/></label>
-            <input type ="submit" value = "Submit"/>
-        </form>
-    );
-}
-function ChooseGame(props){
-    return(
-      <button>What Game boi</button>
-    );
-}
+
+
+
+
 export default ActionPrompt;

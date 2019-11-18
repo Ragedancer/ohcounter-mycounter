@@ -1,7 +1,30 @@
 
 #dice{
     width: 100px;
+    padding: 5px;
 }
 
-table {margin: auto;
-        }
+table {
+    margin: auto;
+    padding-top: 40px;
+}
+
+#result{
+    text-align: center;
+    background-color: #fff;
+    color: #000;
+    font-size: 48px;
+    width: 500px;
+    height: 40px;
+}
+
+/*the code below is planned to add animation to the dice and result*/
+.classname{
+
+}
+@keyframes growShrink {
+    from {
+    }
+    to {
+    }
+}

@@ -1,9 +1,10 @@
-import React from "react";
+import React, {Component} from 'react';
 import Increment from "./Increment";
 import Decrement from "./Decrement";
+import './Game.scss';
 
 
-class CommanderDamage extends React.Component {
+class CommanderDamage extends Component {
     constructor(props) {
         super(props);
         // in order to pass data from parent to child or child to parent ypu need to initialize you state and properties
@@ -24,10 +25,10 @@ class CommanderDamage extends React.Component {
     render(){
         return (
             <div className={"commander-damage"}>
-                <h5 className={"title"}>Commander Damage</h5>
-                <Increment sendCounter={this.getCounter} counter={this.state.counter} hitPoints={1}/>
-                <h1 className={"commander-damage-points"}>{this.state.counter}</h1>
-                <Decrement sendCounter={this.getCounter} counter={this.state.counter} hitPoints={1}/>
+                <h5 className={"counter-name"}>Commander Damage</h5>
+                <Increment className={"increment"} sendCounter={this.getCounter} counter={this.state.counter} hitPoints={1}/>
+                <h1 className={"counter-points"}>{this.state.counter}</h1>
+                <Decrement className={"decrement"} sendCounter={this.getCounter} counter={this.state.counter} hitPoints={1}/>
             </div>
         );
     }

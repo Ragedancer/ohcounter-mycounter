@@ -1195,5 +1195,36 @@
     background-color: rgba(0, 0, 0, 0.3);
     z-index: 41;
   }
+
+
+
+  nav {background-color: #00005d;
+    color: #ffffff;
+    letter-spacing: 0.1em;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5em;
+    display: block;}
+  nav ul {list-style-type: none;
+    margin: 0;}
+  nav li {display: inline-block;
+    padding: 0.5em;}
+  nav a {text-decoration: none;
+    display: block;}
+  nav ul ul {position: absolute;
+    background-color: #5564a0;
+    padding: 0;
+    text-align: left;
+    display: none;}
+  nav ul ul li {display: block;
+    border: 1px solid #00005d;
+    width: 8em;
+    padding-left: 1em;
+    margin-left:0;}
+  nav li:hover ul {display: block;}
+  nav a:link {color: #ffffff;}
+  nav a:visited {color: #eaeaea;}
+  nav a:hover {color: #87cefa;}
+
 }
 

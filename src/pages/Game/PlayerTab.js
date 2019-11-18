@@ -1,43 +1,46 @@
-import React from 'react';
+import React, {Component} from 'react';
 import Radio from "@material-ui/core/Radio";
 import RadioGroup from "@material-ui/core/RadioGroup";
 import FormControl from "@material-ui/core/FormControl";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
+import './Game.scss';
 
-function playerTab() {
-    let player = "player";
-    let count = 0;
-    for(let i = 0; i < this.state.players.length; i++) {
-        if(this.state.players.length === 1){
-            player = player + count;
-            return <FormControlLabel value={player} control={<Radio />} label={this.state.players[0]}/>
-        }
-        else {
-            return <FormControlLabel value={player} control={<Radio />} label={this.state.players[i]}/>
-        }
-    }
-}
-
-class PlayerTab extends React.Component {
+class PlayerTab extends Component {
 
     constructor(props) {
         super(props);
-        this.state = { players : [ "Phil", "Sam", "Weston", "Jimmy", "Matheus" ],
-            lifeCounter: 0, poisonCounter: 0, commanderCounterCost: 0, commanderDamageCounter: 0}
+        this.state = { players : [ {name: "Phil"}, {name: "Sam"}, {name: "Weston"}, {name: "Jimmy"}, {name: "Matheus"}],
+            savedCounter: [{lifeCounter: 0}, {poisonCounter: 0}, {commanderCostCounter: 0}, {commanderDamageCounter: 0}]}
+    }
+    //Generating the player tab radio buttons
+    generateTabs = () => {
+        return(
+        // mapping the state iterates the array of state of players so player names can be retrieved
+        this.state.players.map((player, index) => (
+            <td><FormControlLabel key={"player" + index} className={"player-tab"} id={"player" + index}
+                                  value={"player" + index} control={<Radio className={"radio-button"} />} label={player.name}/></td>
+        )))
+    }
+
+    getCounterData = (life, poison, cC, cD) => {
+        let newState = this.state;
+        newState = {
+            savedCounter: [{lifeCounter: this.props.life},{poisonCounter: poison},
+                {commanderCostCounter: cC},{commanderDamageCounter: cD}]
+        }
+        this.setState(newState);
     }
 
     render(){
         return (
-            <div className={"player-tab"}>
-                <FormControl>
-                    <RadioGroup name="player-tabs">
-                        <FormControlLabel value="player0" control={<Radio />} label={this.state.players[0]}/>
-                        <FormControlLabel value="player1" control={<Radio />} label={this.state.players[1]}/>
-                        <FormControlLabel value="player2" control={<Radio />} label={this.state.players[2]}/>
-                        <FormControlLabel value="player3" control={<Radio />} label={this.state.players[3]}/>
-                        <FormControlLabel value="player4" control={<Radio />} label={this.state.players[4]}/>
+            <div className={"content"}>
+                {/*FormControl is Material-UI html form and RadioGroup too*/}
+                <table className={"player-table"}><FormControl>
+                    <RadioGroup className={"player-tabs"}>
+                        {/*Calling the generateTab() to generate the player tab radio buttons*/}
+                        <tr>{this.generateTabs()}</tr>
                     </RadioGroup>
-                </FormControl>
+                </FormControl></table>
             </div>
         );
     }

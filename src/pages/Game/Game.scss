@@ -1,0 +1,38 @@
+.myThighUs {
+  background-color: #fff;
+  width: 800px;
+  height: auto;
+
+  margin: auto;
+}
+.title, .counter-points, .gain, .loss {
+  background-color: #fff;
+  color: #f7121f;
+}
+
+.operator, .icon-num {
+  color: #f7121f;
+}
+.counter-name, .content, .player-tabs, .player-tab {
+  color: #f7121f;
+  background-color: white;
+  //font-size: 24px;
+}
+
+#increment {
+  alignment: left;
+}
+#decrement {
+  alignment: right;
+}
+.MuiRadio-root {
+  background-color: #fff;
+
+}
+.Mui-check {
+  color: #000;
+}
+
+#box{
+  width: 200px;
+}
