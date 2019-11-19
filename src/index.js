@@ -8,8 +8,6 @@ import {BrowserRouter as Router} from "react-router-dom";
 import {Provider} from "mobx-react";
 //App.js component is rendered on the webpage, which is referenced in the public index.html root id
 
-
-
 ReactDOM.render(<App />, document.getElementById('root'));
 
 serviceWorker.unregister();
