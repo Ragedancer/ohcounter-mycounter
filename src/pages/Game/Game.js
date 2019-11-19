@@ -15,6 +15,7 @@ class Game extends Component {
     render() {
         return (
             <table className={"myThighUs"}>
+                <tbody>
                 <tr>
                     <td colSpan={"3"}><PlayerTab /></td>
                 </tr>
@@ -26,6 +27,7 @@ class Game extends Component {
                     <td id={"box"}><CommanderCost /></td>
                     <td id={"box"}><CommanderDamage /></td>
                 </tr>
+                </tbody>
 
             </table>
         );

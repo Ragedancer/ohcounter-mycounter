@@ -1,6 +1,6 @@
 .myThighUs {
   background-color: #fff;
-  width: 800px;
+  width: auto;
   height: auto;
 
   margin: auto;
@@ -19,11 +19,11 @@
   //font-size: 24px;
 }
 
-#increment {
-  alignment: left;
+#Increment {
+  text-align: right;
 }
-#decrement {
-  alignment: right;
+#Decrement {
+  align-content: right;
 }
 .MuiRadio-root {
   background-color: #fff;
@@ -35,4 +35,13 @@
 
 #box{
   width: 200px;
+}
+
+.tbody {
+  border-collapse: collapse;
+}
+
+table {
+  width: 600px;
+  border-collapse: collapse;
 }
