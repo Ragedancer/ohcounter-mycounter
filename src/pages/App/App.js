@@ -14,9 +14,8 @@ const Hamburger = () => (
         <div id="demo">
             <div className="wrapper">
                 <div className="content">
-
                     <ul>
-                        <li><Link to="/actionprompt">Action Prompt</Link></li>
+                        <li><Link to="/">Action Prompt</Link></li>
                         <li><Link to="/numplayerselect">Select Player</Link></li>
                         <li><Link to="/gameselect">Game Select</Link></li>
                         <li><Link to="/game">Game</Link></li>
@@ -29,15 +28,15 @@ const Hamburger = () => (
             </div>
         </div>
 
-        <Switch>
-            <Route path="/actionprompt"><ActionPrompt /></Route>
-            <Route path="/dice"><Dice /></Route>
-            <Route path="/game"><Game /></Route>
-            <Route path={"/randomplayer"}><RandomPlayerSelector /></Route>
-            <Route path="/numplayerselect"><NumPlayerSelect /></Route>
-            <Route path="/playername"><PlayerName /></Route>
-            <Route path="/gameselect"><GameSelect /></Route>
-        </Switch>
+        
+            <Route exact path={"/"} component={ActionPrompt}/>
+            <Route path="/dice" component={Dice}/>
+            <Route path="/game" component={Game}/>
+            <Route path={"/randomplayer"} component={RandomPlayerSelector}/>
+            {/* <Route path="/numplayerselect" Component={}/> */}
+            {/* <Route path="/playername" Component={}/> */}
+            <Route path="/gameselect" component={GameSelect}/>
+        
     </Router>
 );
 
@@ -45,7 +44,6 @@ class App extends Component {
     render() {
         return (
             <div>
-                <ActionPrompt/>
                 <Hamburger />
                 </div>
         );
