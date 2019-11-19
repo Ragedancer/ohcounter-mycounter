@@ -61,27 +61,41 @@ class Dice extends Component {
     }
 }
 
+/**
+ * this funcion here is made so that clicking the picture becomes possible
+ * let result is the variable used for calculating the coin flip.
+ * let diceRoll is the variable calculating dices roll.
+ * let value is used to figure out what the user clicks
+ * @param props
+ */
 function clickedDice(props) {
     let result;
+    let diceRoll;
     //gets the value that was assigned to each die
     let value = props.target.getAttribute('data-value');
 
-    // trying to catch the coin
+
+ /**
+  * trying to catch the coin
+  * coin is assigned the value of 2 because coin is like a 2 sided dice
+  * the if statement is there to catch the value 2 and the logic will then randomly
+  * determine head or tails. Head being 1 and tail being anything else. After that
+  * set the input bar up top with the id 'value' to what ever the result is
+  * */
     if(value==2){
         let coin = Math.floor(Math.random() * value) + 1;
         if(coin == 1) {
             result = 'head';
         } else
            result = 'tail';
-        //alert('You flipped a coin and got a ' + result )
-        document.getElementById('result').value = result;
+            //alert('You flipped a coin and got a ' + result ) //this is a tester
+            document.getElementById('result').value = result;
 
-    } else { //if it isn't a coin then it rolls a corresponding dice instead
-        let diceRoll = Math.floor(Math.random() * value) + 1;
-        //alert('You picked a ' + value + ' and rolled a ' + diceRoll);
+    } else { /*if it isn't a coin then it the logic will treat it like a dice */
+        diceRoll = Math.floor(Math.random() * value) + 1;
+        //alert('You picked a ' + value + ' and rolled a ' + diceRoll); //this is a tester
         document.getElementById('result').value = diceRoll;
     }
-
     document.getElementById('dice').className = 'classname'
 }
 
