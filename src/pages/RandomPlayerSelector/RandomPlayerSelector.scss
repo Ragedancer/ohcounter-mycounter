@@ -1,35 +1,4 @@
-<<<<<<< HEAD
 
-.MuiFormControlLabel-root{
-    background-color: white;
-    color:black;
-    border: 5pt solid black;
-    padding: 5pt;
-    width: auto;
-    height: auto;
-    position: center;
-    text-align: center;
-    :checked {
-        background-color: red;
-    color: white;
-    fill: red;
-        text-align: center;
-
-    }
-    
-
-
-        
- }
-
-FormControl{
-    text-align: center;
-}
-// .MuiFormControlLabel-root:checked{
-    
-
-// }
-=======
 .CheckboxGroup {
   overflow: hidden;
   display: inline-block;
@@ -68,13 +37,20 @@ background-color: #fff;
 border-right: solid thin #f7121f;
 border-bottom: solid thin #f7121f;
 border-style: groove;
+
 }
 .CheckboxGroup{
 display: block;
 text-align: center;
 border: solid 3px #fff;
+    width: 120px;
 }
->>>>>>> 6a5dfff425c118bbcce2cf4da0c906e8bd69295e
+
+.Generate{
+    border: 5px;
+    width: 135px;
+    text-align: center;
+}
 
 
 
