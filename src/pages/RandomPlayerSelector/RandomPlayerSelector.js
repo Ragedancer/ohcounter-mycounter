@@ -91,13 +91,8 @@ class RandomPlayerSelector extends Component {
                     {/*should generate random player and display it*/}
                 <div>
                     <br/>
-                <button className={"Generate"} onClick={this.randPlayer.bind(this)}>
-                    Select
-                </button>
-
-                    <button className={"Generate"} onClick={this.allPlayers.bind(this)}>
-                        All
-                    </button>
+                    <button className={"Generate"} onClick={this.randPlayer.bind(this)}>Select</button>
+                    <button className={"Generate"} onClick={this.allPlayers.bind(this)}>All</button>
                 </div>
             </div>
             // </MuiThemeProvider>
