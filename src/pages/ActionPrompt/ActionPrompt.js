@@ -9,6 +9,7 @@ import {checkCookie} from "../../utils/cookie";
 import {loadFile, loadFileContents, newTemplate} from "../../utils/template";
 import {clearScreen} from "../../utils/util";
 import {observable} from "mobx";
+import {PlayerName} from '../PlayerSelect/PlayerName';
 
 /*  Class Name: ActionPrompt
   Class Usage: Called by <App/>, or from the sidebar to start a new game.
@@ -163,13 +164,7 @@ function ContinueGame(props) {
 }
 
 
-function PlayerName(props){
-return(
-    <form onSubmit={props.onSubmit}>
-        <label><input type={props.type} value={props.value}  onChange={props.onChange} /></label>
-        <input type="submit" value="Submit"/>
-    </form>);
-}
+
 
 
 
