@@ -26,7 +26,7 @@ class Dice extends Component {
 
                     <input id = "result" value={"Click a Dice!"} ></input>
 
-                    <table>
+                    <table className={"diceTable"}>
                     {/*First row of dices*/}
                         <tr>
                             <td id={"container"} background={"Dice4"}>
