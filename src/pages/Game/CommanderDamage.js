@@ -25,7 +25,7 @@ class CommanderDamage extends Component {
     render(){
         return (
             <div className={"commander-damage"}>
-                <h5 className={"counter-name"}>Commander Damage</h5>
+                <h5 className={"counter-name-comD"}>Commander Damage</h5>
                 <Increment className={"increment"} sendCounter={this.getCounter} counter={this.state.counter} hitPoints={1}/>
                 <h1 className={"counter-points"}>{this.state.counter}</h1>
                 <Decrement className={"decrement"} sendCounter={this.getCounter} counter={this.state.counter} hitPoints={1}/>

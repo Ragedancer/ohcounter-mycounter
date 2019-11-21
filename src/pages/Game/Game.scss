@@ -1,10 +1,11 @@
+
 .myThighUs {
   background-color: #fff;
   width: auto;
   height: auto;
-
   margin: auto;
 }
+
 .title, .counter-points, .gain, .loss {
   background-color: #fff;
   color: #f7121f;
@@ -16,7 +17,12 @@
 .counter-name, .content, .player-tabs, .player-tab {
   color: #f7121f;
   background-color: white;
-  //font-size: 24px;
+  font-size: 24px;
+}
+.counter-name-comD {
+  color: #f7121f;
+  background-color: white;
+  font-size: 24px;
 }
 
 #Increment {
@@ -37,11 +43,13 @@
   width: 200px;
 }
 
+
+
 .tbody {
   border-collapse: collapse;
 }
 
 table {
-  width: 600px;
+  width: 650px;
   border-collapse: collapse;
 }

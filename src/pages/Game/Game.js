@@ -25,7 +25,7 @@ class Game extends Component {
                 <tr>
                     <td id={"box"}><PoisonPoints /></td>
                     <td id={"box"}><CommanderCost /></td>
-                    <td id={"box"}><CommanderDamage /></td>
+                    <td id={"box-cd"}><CommanderDamage /></td>
                 </tr>
                 </tbody>
 
