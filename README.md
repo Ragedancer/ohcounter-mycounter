@@ -22,11 +22,6 @@ The last counter you will ever need!
 5. [Webstorm by JetBrains](https://www.jetbrains.com/webstorm/)
 6. [Material](https://material-ui.com/)
 
-**Project Prerequisites**
-- - -
-- [Git](https://git-scm.com/)
-- [NodeJS & npm](https://nodejs.org/en/)
-
 **Project Installation**
 - - -
 1. Using Git change to the desired directory to save the React App using ```$ cd <directory>``` command line.
