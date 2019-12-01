@@ -28,7 +28,6 @@ class Game extends Component {
                     <td id={"box-cd"}><CommanderDamage /></td>
                 </tr>
                 </tbody>
-
             </table>
         );
     }

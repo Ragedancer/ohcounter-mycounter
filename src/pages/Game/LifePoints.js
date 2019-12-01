@@ -3,7 +3,7 @@ import Increment from "./Increment";
 import Decrement from "./Decrement";
 import './Game.scss';
 
-
+/*The purpose of this class is to increment, decrement, and keep track of the Life counter*/
 class LifePoints extends Component {
     constructor(props) {
         super(props);
@@ -24,13 +24,12 @@ class LifePoints extends Component {
     }
 
     render(){
-
         return (
             <div className={"life-point-container"}>
                 <h5 className={"counter-name"}>Life</h5>
                 <h1 className={"counter-points"}>{this.state.counter}</h1>
-                {/* pass the state props by injecting attributes in the element tag*/}
-                {/* to send data to child components inject with the variables sendLifePoints, lifePoints, hitPoints. you can send functions, variable, etc.*/}
+                {/* pass the state props to Increment.js and Decrement.js by injecting attribute functions sendCounter={this.getCounter} in the element tag*/}
+                {/* to send data to child components inject with the variables counter and hitPoints. you can send functions, variable, etc.*/}
                 <table>
                     <tbody>
                         <tr>

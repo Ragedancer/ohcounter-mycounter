@@ -5,6 +5,8 @@ import FormControl from "@material-ui/core/FormControl";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import './Game.scss';
 
+/*This purpose of this class component it to select the players counter by radio buttons and have it saved even if you
+  select a different player*/
 class PlayerTab extends Component {
 
     constructor(props) {
