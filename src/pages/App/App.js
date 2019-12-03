@@ -16,11 +16,9 @@ const Hamburger = () => (
                 <div className="content">
                     <ul>
                         <li><Link to="/">Action Prompt</Link></li>
-<<<<<<< HEAD
-=======
+
                         {/* <li><Link to="/numplayerselect">Select Player</Link></li>
                         <li><Link to="/gameselect">Game Select</Link></li> */}
->>>>>>> 0d930ad781228be7d6ef0872d462197a07d415f3
                         <li><Link to="/game">Game</Link></li>
                         {/* <li><Link to="/playername">Player Name</Link></li> */}
                         <li><Link to="/randomplayer">Random Player Selector</Link></li>
@@ -36,13 +34,11 @@ const Hamburger = () => (
             <Route path="/dice" component={Dice}/>
             <Route path="/game" component={Game}/>
             <Route path={"/randomplayer"} component={RandomPlayerSelector}/>
-<<<<<<< HEAD
             <Route path="/gameselect" component={GameSelect}/>
-=======
             {/* <Route path="/numplayerselect" Component={}/> */}
             {/* <Route path="/playername" Component={}/> */}
             {/* <Route path="/gameselect" component={GameSelect}/> */}
->>>>>>> 0d930ad781228be7d6ef0872d462197a07d415f3
+
         
     </Router>
 );
