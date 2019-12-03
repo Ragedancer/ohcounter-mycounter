@@ -61,13 +61,13 @@
 }
 
 #demo .wrapper:active .content {
-    height: 217px;
+    height: auto;
     z-index: 3;
     -webkit-transition-delay: 0s;
 }
 
 #demo .content:hover {
-    height: 217px;
+    height: auto;
     z-index: 3;
     -webkit-transition-delay: 0s;
 }
