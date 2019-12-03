@@ -10,12 +10,12 @@ import PlayerName from "../PlayerSelect/PlayerName";
 import {GameSelect} from "../GameSelect/GameSelect";
 
 const Hamburger = () => (
+    
     <Router>
         <div id="demo">
             <div className="wrapper">
                 <div className="content">
                     <ul>
-
                         <li><Link to="/">Action Prompt</Link></li>
                         <li><Link to="/game">Game</Link></li>
                         <li><Link to="/randomplayer">Random Player Selector</Link></li>
@@ -35,8 +35,8 @@ const Hamburger = () => (
             <Route path="/dice" component={Dice}/>
             <Route path="/game" component={Game}/>
             <Route path={"/randomplayer"} component={RandomPlayerSelector}/>
-            <Route path="/gameselect" component={GameSelect}/>
             {/* Created for development Reasons
+            <Route path="/gameselect" component={GameSelect}/>
             <Route path="/numplayerselect" Component={}/>
             <Route path="/playername" Component={}/>
             <Route path="/gameselect" component={GameSelect}/> */}
@@ -48,9 +48,11 @@ const Hamburger = () => (
 class App extends Component {
     render() {
         return (
+            <body>
             <div>
                 <Hamburger />
                 </div>
+                </body>
         );
     }
 }
