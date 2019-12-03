@@ -1,16 +1,10 @@
-import React, {Component} from "react";
-class GameSelect extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {value:props.value};
-        this.state = {onChange:props.onChange};
-    }
+import React from "react";
 
-    render() {
-        return (
+export function GameSelect(props) {
+    return (
             <div>
                 <h2>Pick a Game Type:</h2>
-                <select value={this.state.value} onChange={this.state.onChange} size={4}>
+                <select value={props.value} onChange={props.onChange} size={4}>
                     <option value="Commander">MTG Commander</option>
                     <option value="Standard">MTG Standard</option>
                     <option value="YGO">Yu-Gi-Oh</option>
@@ -18,6 +12,4 @@ class GameSelect extends Component {
                 </select>
             </div>
         );
-    }
 }
-export default GameSelect;

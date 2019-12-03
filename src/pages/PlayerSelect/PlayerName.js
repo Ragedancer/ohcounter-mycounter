@@ -1,4 +1,9 @@
-//This wasn't working so until it is fixed we will be having PlayerName be in ActionPrompt
+/*
+        Function Name: PlayerName
+        Links to:ActionPrompt.js
+        Function Usage: The user types in the player names and once the press enter or submit,
+                        the names are added to an array.
+    */
 import React from 'react';
 
 export function PlayerName(props){
@@ -6,5 +11,5 @@ export function PlayerName(props){
         <form onSubmit={props.onSubmit}>
             <label><input type={props.type} value={props.value}  onChange={props.onChange} /></label>
             <input type="submit" value="Submit"/>
-        </form>)
+        </form>);
     }

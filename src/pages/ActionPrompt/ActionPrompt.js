@@ -1,16 +1,15 @@
 import React, {Component} from 'react';
 import Button from '@material-ui/core/Button';
 import './ActionPrompt.scss';
-import GameSelect from "../GameSelect/GameSelect";
+
 import NumPlayerSelect from "../PlayerSelect/NumPlayerSelect";
-//import PlayerName from "../PlayerSelect/PlayerName";
 import App from '../App/App.js';
 import {checkCookie} from "../../utils/cookie";
 import {loadFile, loadFileContents, newTemplate} from "../../utils/template";
 import {clearScreen} from "../../utils/util";
 import {observable} from "mobx";
+import {GameSelect} from '../GameSelect/GameSelect';
 import {PlayerName} from '../PlayerSelect/PlayerName';
-
 /*  Class Name: ActionPrompt
   Class Usage: Called by <App/>, or from the sidebar to start a new game.
   Class Reason: This class takes in all the information needed to start a game, it
