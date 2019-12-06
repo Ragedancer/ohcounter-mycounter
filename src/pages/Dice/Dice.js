@@ -24,7 +24,7 @@ class Dice extends Component {
             <div>
                 <div id = "main">
 
-                    <input id = "result" value={"Click a Dice!"} ></input>
+                    <input id={"result"} value={"Click a Dice!"} ></input>
 
                     <table className={"diceTable"}>
                     {/*First row of dices*/}
@@ -95,8 +95,10 @@ function clickedDice(props) {
         diceRoll = Math.floor(Math.random() * value) + 1;
         //alert('You picked a ' + value + ' and rolled a ' + diceRoll); //this is a tester
         document.getElementById('result').value = diceRoll;
+
     }
-    document.getElementById('dice').className = 'classname'
+
+
 }
 
 //Need to export for other files to see -jimmy

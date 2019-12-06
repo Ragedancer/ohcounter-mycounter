@@ -19,11 +19,17 @@
 }
 
 /*the code below is planned to add animation to the dice and result*/
-.classname{
+.diceEffects {
+    background-color: #0f0;
+    color: #0f0;
+    -webkit-animation-name: growShrink;
+    -webkit-animation-duration: 1s;
 }
-@keyframes growShrink {
-    from {
+@-webkit-keyframes growShrink {
+    0%, 100% {
+        -webkit-transform: scale(1);
     }
-    to {
+    50% {
+        -webkit-transform: scale(2);
     }
 }
